@@ -1,0 +1,172 @@
+﻿@{ 
+    Layout = "~/Views/Shared/Autenticacao.cshtml";
+}
+
+@model AppLabVad.Models.MetaModel
+
+<head>
+    <script src="~/Scripts/_JavaScript/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/_JavaScript/fLogin.js"></script>
+    <link href="~/Content/Login.css" rel="stylesheet" />
+</head>
+
+
+<section class="section">
+    <div class="container">
+        <div id="loginCarrosel" class="carousel slide">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="column is-half">
+                        <div class="LoginBox">
+                            <div class="column">
+                                <div class="level">
+                                    <figure class="image Logo">
+                                        <img src="~/Content/_imagens/logo.png" />
+                                    </figure>
+                                </div>
+                                <div class="level">
+                                    <h1 class="title is-3 has-text-white is-size-4-touch">
+                                        LabVad: Laboratório Virtual de Atividades Didáticas em Ciências e Robótica
+                                    </h1>
+                                </div>
+                                <div class="level">
+                                    <section>
+                                        @using (Html.BeginForm("Login", "Conta", new { ReturnUrl = ViewBag.ReturnUrl },
+                                                FormMethod.Post, new { @class = "column", id = "login", role = "form" }))
+                                        {
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                            <div class="field">
+                                                <div class="level columns is-gapless">
+                                                    <div class="column is-4">
+                                                        <p> @Html.LabelFor(log => log.ModelLogin.EmailLog, new { @class = "label is-medium has-text-white" }) </p>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="control">
+                                                            @Html.TextBoxFor(log => log.ModelLogin.EmailLog, new { @class = "input" })
+                                                            @Html.ValidationMessageFor(log => log.ModelLogin.EmailLog, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="level columns is-gapless">
+                                                    <div class="column is-4">
+                                                        <p> @Html.LabelFor(log => log.ModelLogin.SenhaLog, new { @class = "label is-medium has-text-white" }) </p>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="control">
+                                                            @Html.PasswordFor(log => log.ModelLogin.SenhaLog, new { @class = "input" })
+                                                            @Html.ValidationMessageFor(log => log.ModelLogin.SenhaLog, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="columns">
+                                                    <div class="column is-narrow">
+                                                        <div class="button is-light is-outlined">
+                                                            <p> @Html.LabelFor(log => log.ModelLogin.LembrarMe, new { @class = "is-marginless" })</p>
+                                                            <div class="Checkbox">
+                                                                @Html.CheckBoxFor(log => log.ModelLogin.LembrarMe)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="is-pulled-right">
+                                                            <input class="button is-link" type="submit" value="Entrar" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <div class="is-pulled-right">
+                                        <div id="changeToRegister" class="button is-primary">Me cadastrar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="column is-half is-offset-6">
+                        <div class="RegisterBox">
+                            <div class="column">
+                                <div class="level">
+                                    <h2 class="title is-3 has-text-white is-size-4-touch"> Realizar Cadastro </h2>
+                                </div>
+                                <div class="level">
+                                    <div class="column">
+                                        @using (Html.BeginForm("Cadastrar", "Cadastro", new { ReturnUrl = ViewBag.ReturnUrl },
+                                                                    FormMethod.Post, new { @class = "column RegisterBgd", id = "cadastro", role = "form" }))
+                                        {
+                                            <input id="form" type="hidden" value="cadastro" />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="field">
+                                                <p> @Html.LabelFor(cad => cad.ModelRegister.NomeCad, new { @class = "is-medium has-text-white" }) </p>
+                                                <div class="control">
+                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.NomeCad, "", new { @class = "text-danger" })
+                                                    @Html.TextBoxFor(cad => cad.ModelRegister.NomeCad, new { @class = "input", id = "nomeCad" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <p> @Html.LabelFor(cad => cad.ModelRegister.EmailCad, new { @class = "is-medium has-text-white" }) </p>
+                                                <div class="control">
+                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.EmailCad, "", new { @class = "text-danger" })
+                                                    @Html.TextBoxFor(cad => cad.ModelRegister.EmailCad, new { @class = "input", id = "emailCad" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <p> @Html.LabelFor(cad => cad.ModelRegister.InstiCad, new { @class = "is-medium has-text-white" }) </p>
+                                                <div class="control">
+                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.InstiCad, "", new { @class = "text-danger" })
+                                                    @Html.TextBoxFor(cad => cad.ModelRegister.InstiCad, new { @class = "input", id = "instiCad" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <p> @Html.LabelFor(cad => cad.ModelRegister.SenhaCad, new { @class = "is-medium has-text-white" }) </p>
+                                                <div class="control">
+                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.SenhaCad, "", new { @class = "text-danger" })
+                                                    @Html.PasswordFor(cad => cad.ModelRegister.SenhaCad, new { @class = "input", id = "senhaCad" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <p> @Html.LabelFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "is-medium has-text-white" }) </p>
+                                                <div class="control">
+                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.ConfSenCad, "", new { @class = "text-danger" })
+                                                    @Html.PasswordFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "input", id = "confSenCad" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="is-pulled-left">
+                                                    <input class="button is-link" type="submit" value="Enviar" />
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="column">
+                                            <div class="field">
+                                                <div class="is-pulled-right">
+                                                    <div id="changeToLogin" class="button is-light"> << Voltar para o Login </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

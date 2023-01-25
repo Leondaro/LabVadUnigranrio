@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Motor DC</title>
+	<meta charset="utf-8">
+    <link href="../bulma.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="section has-background-info">
+        <div class="container">
+            <h3 class="title is-4"> O que um Motor DC faz? </h3>
+            <p class="title is-6"> Motores são usados em aplicações fixas e móveis. São encontrados em processos de fabricação (em esteiras, por exemplo), em sistemas de locomoção de robôs, cadeiras de roda motorizada, além de muitos outros projetos. </p>
+
+            <h3 class="title is-4"> Como funciona no LabVad Unigranrio? </h3>
+            <p class="title is-6"> O motor dc fica conectado em uma entrada na placa arduíno. </p>
+
+            <div class="columns">
+                <div class="column is-narrow">
+                    <figure class="box">
+                        <img class="has-ratio" src="/Content/_imagens/dc2.jpg" width="150">
+                    </figure>
+                </div>
+            </div>
+            
+
+            <h3 class="title is-4"> Exemplo de código: </h3>
+
+<pre> 
+/* Motor DC
+    * ------------
+
+int input1 = 4;
+int enable1 = 2;
+int input2 = 5;
+int button1 = 6;
+int button2 = 7;
+ 
+void setup(){
+    pinMode(input1, OUTPUT);
+    pinMode(enable1, OUTPUT);
+    pinMode(input2, OUTPUT);
+    pinMode(button1, INPUT);
+    pinMode(button2, INPUT);
+}
+ 
+void rotateLeft(){
+    digitalWrite(enable1, HIGH);
+    digitalWrite(input2, LOW);
+    digitalWrite(input1, HIGH);
+}
+ 
+void rotateRight(){
+    digitalWrite(enable1, HIGH);
+    digitalWrite(input1, LOW);
+    digitalWrite(input2, HIGH);
+}
+ 
+void parar(){
+    digitalWrite(enable1, LOW);
+    digitalWrite(input1, LOW);
+    digitalWrite(input2, LOW);
+}
+ 
+void loop(){
+    while(digitalRead(button1) == HIGH){
+    rotateLeft();
+    }
+ 
+    while(digitalRead(button2) == HIGH){
+    rotateRight();
+    }
+ 
+    parar();
+}
+</pre>
+        </div>
+    </section>
+	
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<link href="~/Content/Execucao.css" rel="stylesheet" />
+<div id="execucao">
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <div class="WrapperVideo">
+                        <h4 class="tag title is-4 is-rounded is-danger">Ao Vivo</h4>
+                        <hr id="video" />
+                        <div class="VideoBorder">
+                            <video class="has-ratio" controls>
+                                <source src="~/Content/_imagens/videoExemplo.mp4" type="video/mp4">
+                                Seu Browser não suporta a tag Video
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <div class="WrapperCode has-ratio">
+                        <ul class="nav nav-tabs">
+                            <li class="active Abas Left"><a class="CodeEditorText" data-toggle="tab" href="#edit">Edição</a></li>
+                            <li class="Abas Right"><a class="CodeEditorText" data-toggle="tab" href="#saveCod">Códigos Salvos</a></li>
+                            <!--<li class="Abas Right"><a class="CodeEditorText" data-toggle="tab" href="#recs">Gravações</a></li>-->
+                        </ul>
+                        <div class="tab-content AbaContent">
+                            <div id="edit" class="tab-pane fade in active">
+                                <div id="editor"></div>
+                            </div>
+                            <div id="saveCod" class="tab-pane fade">
+                                <ul class="UlFormat">
+                                    <li class="LiFormat" role="button"><a class="CodeEditorText textos">MeuCodigo1</a></li>
+                                    <li class="LiFormat" role="button"><a class="CodeEditorText textos">MeuCodigo2</a></li>
+                                    <li class="LiFormat" role="button"><a class="CodeEditorText textos">MeuCodigo3</a></li>
+                                </ul>
+                            </div>
+                            <div id="recs" class="tab-pane fade">
+                                <ul class="UlFormat">
+                                    <li class="LiFormat"><a class="CodeEditorText" href="#">MeuVideo1</a></li>
+                                    <li class="LiFormat"><a class="CodeEditorText" href="#">MeuVideo2</a></li>
+                                    <li class="LiFormat"><a class="CodeEditorText" href="#">MeuVideo3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="button is-large is-pulled-right Run">Rodar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

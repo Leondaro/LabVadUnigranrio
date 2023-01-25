@@ -1,0 +1,39 @@
+﻿#agendamento {
+    
+}
+
+#calendar {
+    margin-top: 50px;
+}
+
+#reserva {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/*
+.formReserve {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+*/
+
+.columns {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+td.fc-today {
+    background-color: inherit !important;
+}
+
+td.fc-disabled-day {
+    background-color: #AAA !important;
+    opacity: 0.4;
+}

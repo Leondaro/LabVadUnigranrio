@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Display de Caracteres</title>
+	<meta charset="utf-8">
+    <link href="../bulma.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="section has-background-info">
+        <div class="container">
+            <h3 class="title is-4"> O que um Display de Caracteres faz? </h3>
+            <p class="title is-6"> Um display de cristal líquido, acrônimo de LCD (em inglês liquid crystal display). Mostra dados lidos pelo LabVad em letras e números, de uma forma inteligível. </p>
+
+            <h3 class="title is-4"> Como funciona no LabVad Unigranrio? </h3>
+            <p class="title is-6"> O display fica conectado em pinos e o código deve ser feito de acordo com essa conexão. </p>
+
+            <div class="columns">
+                <div class="column is-narrow">
+                    <figure class="box">
+                        <img class="has-ratio" src="/Content/_imagens/carac1.jpg" width="150">
+                    </figure>
+                </div>
+            </div>
+
+
+            <h3 class="title is-4"> Exemplo de código: </h3>
+<pre> 
+/* Display de Caracteres
+    * ------------
+// Incluir a biblioteca LCD:
+    #include <LiquidCrystal.h>
+// Inicializar a biblioteca com os números dos pinos digitais
+    LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+    void setup() {
+    // Configurar o número de colunas e linhas do LCD:
+    lcd.begin(16, 2);
+    // Texto a ser mostrado no LCD (texto fixo):
+    lcd.print("LABVAD UNIGRANRIO");
+}
+void loop() {
+    // Posicionar o cursor na coluna 0 e linha 1 (segunda linha):
+    lcd.setCursor(0, 1);
+    // Imprimir contagem de segundos decorridos:
+    lcd.print(millis() / 1000);
+}
+</pre>
+        </div>
+    </section>
+</body>
+</html>

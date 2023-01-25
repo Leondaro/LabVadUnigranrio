@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>LEDs</title>
+	<meta charset="utf-8">
+    <link href="../bulma.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="section has-background-info">
+        <div class="container">
+            <h3 class="title is-4"> O que um Led faz? </h3>
+            <p class="title is-6"> LED (Light Emitting Diode), emite uma luz quando uma pequena corrente o aciona. </p>
+
+            <h3 class="title is-4"> Como funciona no LabVad Unigranrio? </h3>
+            <p class="title is-6"> Os leds ficam conectados em pinos e o código deve ser feito de acordo com essa conexão. </p>
+
+            <div class="columns">
+                <div class="column is-narrow">
+                    <figure class="box">
+                        <img class="has-ratio" src="/Content/_imagens/leds1.jpg" width="150">
+                    </figure>
+                </div>
+            </div>
+            
+
+            <h3 class="title is-4"> Exemplo de código: </h3>
+<pre> 
+            
+/* LED piscante
+    * ------------
+    *
+    * liga e desliga um LED conectado a um pino digital
+    * em intervalos de 2 segundos. Idealmente usa-se o pino 13 da
+    * placa do Arduino porque ele já possui um resistor ligado a ele
+    *
+
+int ledPin = 13;                // LED conectado ao pino digital 13
+
+void setup()
+{
+    pinMode(ledPin, OUTPUT);      // configura pino digital como saída
+}
+
+void loop()
+{
+    digitalWrite(ledPin, HIGH);   // liga o LED
+    delay(1000);                  // temporiza 1 segundo
+    digitalWrite(ledPin, LOW);    // desliga o LED
+    delay(1000);                  // aguarda mais um segundo
+}
+</pre>
+        </div>
+    </section>
+</body>
+</html>

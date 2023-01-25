@@ -1,0 +1,130 @@
+﻿<link href="~/Content/MinhaConta.css" rel="stylesheet" />
+<div id="minhaConta" class="content container">
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-vertical">
+            <div class="tile is-parent">
+                <div class="tile is-parent is-vertical">
+
+                    <div id="PISO1" class="tile is-child box has-background-light">
+                        <div class="level">
+                            <div class="level-item">
+                                <figure class="image is-128x128">
+                                    <img class="is-rounded" src="~/Content/_imagens/profmiguel.jpg" style="">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="level">
+                            <div class="level-item">
+                                <h1 class="tag is-rounded title is-3 is-info" style="">@ViewBag.Nome</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="PISO2" class="tile is-child box has-background-light">
+                        <div class="tile level-item ">
+                            <h1 class="tag is-rounded title is-3 is-warning">Informações Gerais</h1>
+                        </div>
+                        <div class="tile level-item">
+                            <div class="tile is-child is-8">
+                                <div class="field">
+                                    <label class="is-large textos">Nome</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-large" type="text" value="@ViewBag.Nome" readonly/>
+                                        <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="is-large textos">E-mail</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-large" type="text" value="@ViewBag.Email" readonly/>
+                                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="is-large textos">Instituição</label>
+                                    <div class="control">
+                                        <input class="input is-large" type="text" value="@ViewBag.Instituicao" readonly/>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-link is-large">Alterar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile is-parent">
+                    <div id="PISO3" class="tile is-child box has-background-light">
+                        <div class="tile is-child level">
+                            <div class="level-item">
+                                <h1 class="tag is-rounded title is-3 is-info">Minhas Reservas</h1>
+                            </div>
+                        </div>
+                        <div class="level-item">
+                            <div id="wrappedView" class="tile is-child is-10 box has-background-grey-lighter WrapperView">
+                                <div id="viewList">
+                                    <script>
+                                        function getViewList() {
+                                            $("#viewList").empty();
+
+                                            let viewList = document.getElementById("viewList");
+                                            let calendarList = new FullCalendar.Calendar(viewList, {
+                                                plugins: ['bootstrap', 'interaction', 'list'],
+                                                defaultView: 'listDay',
+                                                height: 'auto',
+                                                locale: 'pt-br',
+                                                themeSystem: 'bootstrap',
+                                                header: {
+                                                    left: 'prev',
+                                                    center: 'title',
+                                                    right: 'next',
+                                                },
+                                                events: [
+                                                    {
+                                                        title: 'Reservado para mim',
+                                                        start: "2019-08-13T09:30",
+                                                        end: "2019-08-13T10:59"
+                                                    },
+                                                    {
+                                                        title: 'Reservado para mim',
+                                                        start: "2019-08-13T12:00",
+                                                        end: "2019-08-13T12:59"
+                                                    },
+                                                    {
+                                                        title: 'Reservado para mim',
+                                                        start: "2019-08-13T18:30",
+                                                        end: "2019-08-13T19:59"
+                                                    },
+                                                    {
+                                                        title: 'Reservado para mim',
+                                                        start: "2019-08-13T22:00",
+                                                        end: "2019-08-13T23:59"
+                                                    },
+                                                ]
+                                            });
+                                            calendarList.render();
+                                        }
+                                        getViewList();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                <div class="tile is-parent">
+                    <div class="tile is-parent">
+                        <div id="PISO4" class="tile is-child box has-background-light">
+
+                        </div>
+                    </div>
+                </div>
+            -->
+        </div>
+    </div>
+</div>
+
