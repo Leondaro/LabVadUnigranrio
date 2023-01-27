@@ -1,9 +1,13 @@
 ﻿<link href="~/Content/Agendamento.css" rel="stylesheet" />
 <div class="container">
     <div id="agendamento">
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <div class="tile is-child">
+        <div class="">
+            <div class="">
+                <div class="">
+                    <h2 class="title is-2 titleHelp"> Agendamento: </h2>
+                    <h3 class="title is-3">
+                        Escolha o dia e depois a hora que deseja reservar para o uso do experimento. Para desistir do horário escolhido, selecione-o novamente.
+                    </h3>
                     <div id="calendar">
                         <script>
                             function calendario() {
@@ -11,7 +15,7 @@
                                 calendar = new FullCalendar.Calendar(CalendarEl, {
                                     plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid', 'list'],
                                     defaultView: 'dayGridMonth',
-                                    height: 'parent',
+                                    height: 'auto',
                                     locale: 'pt-br',
                                     themeSystem: 'bootstrap',
                                     header: {
@@ -29,7 +33,7 @@
                                         //inputDay.value = info.dateStr
                                         inputDay.value = formatDateStr(info.dateStr);
 
-                                        $("#Conteudo").carousel(2);
+                                        $("#Conteudo").carousel(1);
                                         $("#calendar").css('pointer-events', 'none');
                                         CalendarRender(info.dateStr);
                                         //info.dayEl.style.backgroundColor = 'rgba(190, 240, 241, 0.5)';

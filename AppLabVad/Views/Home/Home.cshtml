@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="..\..\Scripts\_fullCalendar\bootstrap\main.css" />
     <link href="~/Content/Home.css" rel="stylesheet" />
     <link href="~/Content/bulma.css" rel="stylesheet" />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 
     <link rel="stylesheet" type="text/css" href="..\..\Content\bootstrap.min.css" />
     <link href='https://use.fontawesome.com/releases/v5.0.6/css/all.css' rel='stylesheet'>
@@ -30,7 +29,7 @@
     <script src="~/Scripts/_JavaScript/funcoes.js"></script>
 </head>
 
-<body id="Home">
+<body class="whiteTheme">
     <div id="container">
         <nav aria-label="main navigation">
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="barraMenu">
@@ -41,17 +40,17 @@
             <div id="barraMenu" class="Menu columns">
                 <div class="Menu column is-2"><img id="logo" src="~/Content/_imagens/logo.png" /></div>
                 <div id="" class="column columns is-offset-4 is-narrow">
-                    <a class="LinkMenu White Menu-item" id="btn0" href="#">Ajuda</a>
-                    <a class="LinkMenu White Menu-item" id="btn1" href="#">Agendamento</a>
-                    <a class="LinkMenu White Menu-item" id="btn2" href="#">Execução</a>
-                    <a class="LinkMenu White Menu-item" id="btn3" href="#">Minha Conta</a>
+                    <a class="LinkMenu White Menu-item current" id="btn0" href="#">Agendamento</a>
+                    <a class="LinkMenu White Menu-item" id="btn1" href="#">Experimento</a>
+                    <a class="LinkMenu White Menu-item" id="btn2" href="#">Minha Conta</a>
+                    <a class="LinkMenu White Menu-item" id="btn3" href="#">Ajuda</a>
 
                     <a class="LinkMenu White Menu-item" id="btn4" href="@Url.Action("Logoff", "Home")">Sair</a>
                 </div>
                 <div class="column is-1 Box navbar-item">
                     <span class="tag is-large is-warning column Noturno">Modo Noturno</span>
                     <label class="Switch">
-                        <input type="checkbox" name="botaoNoturno" onclick="AlterarCorDeFundo()" />
+                        <input id="btnNoturno" type="checkbox" />
                         <span class="Slider"></span>
                     </label>
                 </div>
@@ -62,9 +61,6 @@
             <div id="Conteudo" class="carousel slide">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        @Html.Action("Ajuda")
-                    </div>
-                    <div class="item">
                         @Html.Action("Agendamento")
                     </div>
                     <div class="item">
@@ -75,6 +71,9 @@
                     </div>
                     <div class="item">
                         @Html.Action("MinhaConta")
+                    </div>
+                    <div class="item">
+                        @Html.Action("Ajuda")
                     </div>
                 </div>
             </div>

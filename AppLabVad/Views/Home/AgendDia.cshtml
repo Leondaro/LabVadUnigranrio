@@ -9,7 +9,7 @@
                             <div class="columns">
                                 <div class="column is-one-fifth">
                                     <a id="btnRetorno" class="button is-info is-medium" onclick="ReturnCalendar()">
-                                        << Voltar
+                                        <span class="icon is-small is-left"><i class="fas fa-arrow-left"></i><span>Voltar</span></span>
                                     </a>
                                 </div>
                                 <div class="column is-one-fifth is-offset-one-quarter">
@@ -167,7 +167,7 @@
 
                             function ReturnCalendar() {
                                 $("#btnRetorno").click(function () {
-                                    $("#Conteudo").carousel(1);
+                                    $("#Conteudo").carousel(0);
                                 });
                             }
 

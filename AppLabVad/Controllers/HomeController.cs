@@ -56,8 +56,8 @@ namespace AppLabVad.Controllers
             //ViewBag.Instituicao = userInfos.Rows[0]["Instituicao"].ToString();
             //ViewBag.Senha = userInfos.Rows[0]["Senha"].ToString();
 
-            ViewBag.Nome = "Miguel";
-            ViewBag.Email = "MiguelEmail";
+            ViewBag.Nome = "Visitante";
+            ViewBag.Email = "visitante@email.com";
             ViewBag.Instituicao = "Unigranrio";
 
             return PartialView();

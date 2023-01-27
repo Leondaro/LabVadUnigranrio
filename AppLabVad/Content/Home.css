@@ -11,7 +11,6 @@ div#container {
     width: auto;
     height: auto;
     min-height: 100vh;
-    /* ATENÇÃO Essa linha deve ser EXCLUIDA antes da entrega final */
 }
 
 div#barraMenu {
@@ -44,22 +43,29 @@ img#logo {
     color: #282923;
 }
 
+.whiteTheme {
+    background-color: #FAF0E6;
+}
+
+.darkTheme {
+    background-color: #282923;
+}
 .White {
     transition: border 1s;
 }
-
-    .White:hover {
+    .White:hover, a.current {
         border-left: 3px solid #fffafa;
         border-bottom: 3px solid #fffafa;
         border-top: 3px solid #fffafa;
         border-radius: 5px;
         box-shadow: 0px 0px 3px #fff;
-        color: #fffafa;
+        color: #fffafa !important;
         transition: box-shadow 0.5s;
+        text-decoration: none; 
     }
 
 a.LinkMenu:hover {
-    text-decoration: none; /* Retira a decoração de texto dos links de menu */
+    text-decoration: none; 
     transition: color 0.5s;
 }
 
@@ -67,7 +73,7 @@ a.LinkMenu:link {
     padding: 15px;
     margin-left: 10px;
     margin-right: 10px;
-    text-decoration: none; /* Retira a decoração de texto dos links de menu */
+    text-decoration: none; 
     transition: color 0.5s;
 }
 
@@ -177,4 +183,15 @@ div#Conteudo {
 .item {
     height: auto;
     min-height: inherit;
+}
+
+hr.line {
+    border: 1px solid gray;
+}
+
+.titleHelp {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #E3E3E3;
+    color: #4C4C4C;
 }

@@ -1,11 +1,13 @@
 ﻿<link href="~/Content/MinhaConta.css" rel="stylesheet" />
 <div id="minhaConta" class="content container">
+    <h2 class="title is-2 titleHelp"> Minha Conta: </h2>
+    <h3 class="title is-3"> Confira ou faça alterações em seus dados cadastrais, e veja seus horários reservados.</h3>
     <div class="tile is-ancestor">
         <div class="tile is-parent is-vertical">
             <div class="tile is-parent">
                 <div class="tile is-parent is-vertical">
 
-                    <div id="PISO1" class="tile is-child box has-background-light">
+                    <div class="tile is-child box bgColorSwitch has-background-light">
                         <div class="level">
                             <div class="level-item">
                                 <figure class="image is-128x128">
@@ -20,30 +22,50 @@
                         </div>
                     </div>
 
-                    <div id="PISO2" class="tile is-child box has-background-light">
+                    <div class="tile is-child box bgColorSwitch has-background-light">
                         <div class="tile level-item ">
                             <h1 class="tag is-rounded title is-3 is-warning">Informações Gerais</h1>
                         </div>
                         <div class="tile level-item">
                             <div class="tile is-child is-8">
                                 <div class="field">
-                                    <label class="is-large textos">Nome</label>
+                                    <label class="is-large">Nome</label>
                                     <div class="control has-icons-left">
-                                        <input class="input is-large" type="text" value="@ViewBag.Nome" readonly/>
+                                        <input class="input is-large" type="text" value="@ViewBag.Nome" readonly />
                                         <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="is-large textos">E-mail</label>
+                                    <label class="is-large">E-mail</label>
                                     <div class="control has-icons-left">
-                                        <input class="input is-large" type="text" value="@ViewBag.Email" readonly/>
+                                        <input class="input is-large" type="text" value="@ViewBag.Email" readonly />
                                         <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="is-large textos">Instituição</label>
+                                    <label class="is-large">Instituição</label>
                                     <div class="control">
-                                        <input class="input is-large" type="text" value="@ViewBag.Instituicao" readonly/>
+                                        <input class="input is-large" type="text" value="@ViewBag.Instituicao" readonly />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-link is-large">Alterar</button>
+                                    </div>
+                                </div>
+                                <hr class="line" />
+                                <div class="field">
+                                    <label class="is-large">Nova Senha</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-large" type="password" readonly />
+                                        <span class="icon is-small is-left"><i class="fas fa-key"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="is-large">Confirmar Nova Senha</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input is-large" type="password" readonly />
+                                        <span class="icon is-small is-left"><i class="fas fa-key"></i></span>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -56,8 +78,8 @@
                     </div>
                 </div>
 
-                <div class="tile is-parent">
-                    <div id="PISO3" class="tile is-child box has-background-light">
+                <div class="tile is-parent is-vertical">
+                    <div class="tile is-child box bgColorSwitch has-background-light">
                         <div class="tile is-child level">
                             <div class="level-item">
                                 <h1 class="tag is-rounded title is-3 is-info">Minhas Reservas</h1>
@@ -115,15 +137,19 @@
                     </div>
                 </div>
             </div>
-            <!--
+            <!---->
+            <div class="tile is-parent">
                 <div class="tile is-parent">
-                    <div class="tile is-parent">
-                        <div id="PISO4" class="tile is-child box has-background-light">
-
+                    <div class="tile is-child box bgColorSwitch has-background-light">
+                        <div class="level-item m-1">
+                            <h1 class="tag is-rounded title is-3 is-warning">Encerrar Conta</h1>
+                        </div>
+                        <div class="level-item">
+                            <button class="button is-danger is-large">Excluir Conta</button>
                         </div>
                     </div>
                 </div>
-            -->
+            </div>
         </div>
     </div>
 </div>

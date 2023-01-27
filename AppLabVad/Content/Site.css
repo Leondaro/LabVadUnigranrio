@@ -3,15 +3,23 @@
     padding-bottom: 20px;
 }
 
+body, ul, div {
+    transition: background-color 1s;
+}
+
 /* Definir largura nos elementos de entrada do formulário, pois eles são 100% de largura por padrão */
 input,
 select,
 textarea {
     max-width: 280px;
 }
+span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+}
 
 /* Define o alinhamento do texto de rodapé */
-.RodapeTxt {
+.footerText {
     text-align: center;
     font-size: 12pt;
     font-weight: bold;
@@ -24,11 +32,7 @@ hr {
     background-color: yellow !important;
 }
 
-.LoginFooter {
-    background-color: rgba(7, 0, 0, 0.8);
-}
-
-.HomeFooter {
+.mainFooter {
     height: 12vh;
     background-color: #4682b4 /*SteelBlue*/
 }
