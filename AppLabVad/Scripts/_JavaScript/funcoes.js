@@ -10,7 +10,7 @@ function changeColorScheme() {
     let timeGrid = $('#calendarTimeGrid');
     let viewList = $('#wrappedView');
     let thCal = calendar.find(".fc-head");
-    let thGrid = timeGrid.find(".fc-head");
+    //let thGrid = timeGrid.find(".fc-head");
     let panelTexts = $('.liText, .liMsg').toArray();
 
     if ($('#editor').length) {
@@ -42,7 +42,7 @@ function changeColorScheme() {
     viewList.toggleClass("has-background-grey-lighter");
     viewList.toggleClass("has-background-grey-light");
     thCal.toggleClass("has-background-light");
-    thGrid.toggleClass("has-background-light");
+    //thGrid.toggleClass("has-background-light");
     //CodePanel
     panelTexts.forEach(text => {
         text.classList.toggle('has-text-light');

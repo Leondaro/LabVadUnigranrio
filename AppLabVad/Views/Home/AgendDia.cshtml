@@ -8,8 +8,11 @@
                         <form id="myReserve">
                             <div class="columns">
                                 <div class="column is-one-fifth">
-                                    <a id="btnRetorno" class="button is-info is-medium" onclick="ReturnCalendar()">
-                                        <span class="icon is-small is-left"><i class="fas fa-arrow-left"></i><span>Voltar</span></span>
+                                    <a id="btnRetorno" class="button is-info is-medium">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </span>
+                                        <span>Voltar</span>
                                     </a>
                                 </div>
                                 <div class="column is-one-fifth is-offset-one-quarter">
@@ -161,15 +164,23 @@
                                     }
                                 });
                                 calendarDay.render();
-                                AlterColorTimeGrid();
+                                //AlterColorTimeGrid();
                                 calendarDay.addEvent(getTimeUnvailable());
-                            }
-
-                            function ReturnCalendar() {
-                                $("#btnRetorno").click(function () {
-                                    $("#Conteudo").carousel(0);
+                                
+                                if ($('#btnNoturno')[0].checked) {
+                                    let themeState = $('#calendarTimeGrid').find(".fc-head")
+                                    themeState.addClass("has-background-light");
+                                }
+                                $("#btnNoturno").change(function () {
+                                    let timeGrid = $('#calendarTimeGrid');
+                                    let themeState = timeGrid.find(".fc-head")
+                                    themeState.toggleClass("has-background-light");
                                 });
                             }
+
+                            $("#btnRetorno").click(function () {
+                                $("#Conteudo").carousel(0);
+                            });
 
                             function Hours() {
                                 let date = new Date();
