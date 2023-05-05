@@ -45,7 +45,7 @@
                                                     </div>
                                                     <div class="column">
                                                         <div class="control">
-                                                            @Html.TextBoxFor(log => log.ModelLogin.EmailLog, new { @class = "input" })
+                                                            @Html.TextBoxFor(log => log.ModelLogin.EmailLog, new { @class = "input", @readonly="readonly" })
                                                             @Html.ValidationMessageFor(log => log.ModelLogin.EmailLog, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>
@@ -58,7 +58,7 @@
                                                     </div>
                                                     <div class="column">
                                                         <div class="control">
-                                                            @Html.PasswordFor(log => log.ModelLogin.SenhaLog, new { @class = "input" })
+                                                            @Html.TextBoxFor(log => log.ModelLogin.SenhaLog, new { @class = "input", @readonly = "readonly", @type = "password" })
                                                             @Html.ValidationMessageFor(log => log.ModelLogin.SenhaLog, "", new { @class = "text-danger" })
                                                         </div>
                                                     </div>

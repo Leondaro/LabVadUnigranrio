@@ -215,7 +215,7 @@
     <Content Include="Content\_imagens\img2fundo.jpg" />
     <Content Include="Content\_imagens\leds.png" />
     <Content Include="Content\_imagens\leds1.jpg" />
-    <Content Include="Content\_imagens\profmiguel.jpg" />
+    <Content Include="Content\_imagens\profile_blank.jpg" />
     <Content Include="Content\_imagens\servo.png" />
     <Content Include="Content\_imagens\servo1.png" />
     <Content Include="Content\_imagens\videoExemplo.mp4" />

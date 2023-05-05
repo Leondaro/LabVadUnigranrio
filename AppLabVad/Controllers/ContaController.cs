@@ -26,7 +26,14 @@ namespace AppLabVad.Controllers
             ViewBag.ReturnUrl = returnUrl; 
             ViewBag.Title = "LabVad - Unigranrio";
 
-            return View();
+            MetaModel model = new MetaModel()
+            {
+                ModelLogin = new LoginViewModel()
+            };
+            model.ModelLogin.EmailLog = "Visitante@email";
+            model.ModelLogin.SenhaLog = "visitante";
+
+            return View(model);
         }
 
         //Faz a chamada de validação de Login
