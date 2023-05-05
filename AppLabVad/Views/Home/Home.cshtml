@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="..\..\Scripts\_fullCalendar\list\main.css" />
     <link rel="stylesheet" type="text/css" href="..\..\Scripts\_fullCalendar\bootstrap\main.css" />
     <link href="~/Content/Home.css" rel="stylesheet" />
-    <link href="~/Content/bulma.css" rel="stylesheet" />
+    <!--<link href="~/Content/bulma.css" rel="stylesheet" />-->
 
     <link rel="stylesheet" type="text/css" href="..\..\Content\bootstrap.min.css" />
     <link href='https://use.fontawesome.com/releases/v5.0.6/css/all.css' rel='stylesheet'>
@@ -30,29 +30,43 @@
 </head>
 
 <body class="whiteTheme">
-    <div id="container">
+    <div class="container-fluid px-0">
         <nav aria-label="main navigation">
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="barraMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-            <div id="barraMenu" class="Menu columns">
-                <div class="Menu column is-2"><img id="logo" src="~/Content/_imagens/logo.png" /></div>
-                <div id="" class="column columns is-offset-4 is-narrow">
-                    <a class="LinkMenu White Menu-item current" id="btn0" href="#">Agendamento</a>
-                    <a class="LinkMenu White Menu-item" id="btn1" href="#">Experimento</a>
-                    <a class="LinkMenu White Menu-item" id="btn2" href="#">Minha Conta</a>
-                    <a class="LinkMenu White Menu-item" id="btn3" href="#">Ajuda</a>
-
-                    <a class="LinkMenu White Menu-item" id="btn4" href="@Url.Action("Logoff", "Home")">Sair</a>
+            <div class="navbar rounded-0 navbar_custom">
+                <a role="button" class="navbar-toggle" aria-label="menu" aria-expanded="false" data-target="barraMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div class="nav-item navbar_brand">
+                    <figure>
+                        <img id="logo" src="~/Content/_imagens/logo.png" />
+                    </figure>
                 </div>
-                <div class="column is-1 Box navbar-item">
-                    <span class="tag is-large is-warning column Noturno">Modo Noturno</span>
-                    <label class="Switch">
-                        <input id="btnNoturno" type="checkbox" />
-                        <span class="Slider"></span>
-                    </label>
+                <div class="navbar_body">
+                    <div id="barraMenu" class="nav-item row px-3">
+                        <div class="nav-item navitem_custom current">
+                            <a class="nav-link navlink_custom" href="#">Agendamento</a>
+                        </div>
+                        <div class="nav-item navitem_custom">
+                            <a class="nav-link navlink_custom" href="#">Experimento</a>
+                        </div>
+                        <div class="nav-item navitem_custom">
+                            <a class="nav-link navlink_custom" href="#">Minha Conta</a>
+                        </div>
+                        <div class="nav-item navitem_custom">
+                            <a class="nav-link navlink_custom" href="#">Ajuda</a>
+                        </div>
+
+                        <div class="nav-item navitem_custom">
+                            <a class="nav-link navlink_custom" href="@Url.Action("Logoff", "Home")">Sair</a>
+                        </div>
+                    </div>
+                    <div class="nav-item px-3 d-flex flex-column justify-content-center">
+                        <span class="switch_label">Modo Noturno</span>
+                        <label class="switch_rail">
+                            <input id="btnNoturno" type="checkbox" />
+                            <span class="slider_button"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </nav>

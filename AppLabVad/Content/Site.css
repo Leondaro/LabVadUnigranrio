@@ -1,6 +1,5 @@
 ﻿body {
     margin: 0%;
-    padding-bottom: 20px;
 }
 
 body, ul, div {
@@ -18,21 +17,19 @@ span {
     font-weight: bolder;
 }
 
-/* Define o alinhamento do texto de rodapé */
-.footerText {
-    text-align: center;
-    font-size: 12pt;
-    font-weight: bold;
-    padding-bottom: 20px;
-    color: white;
-    margin: 0px;
-}
-
 hr {
     background-color: yellow !important;
 }
 
-.mainFooter {
-    height: 12vh;
-    background-color: #4682b4 /*SteelBlue*/
+footer {
+    height: 8rem;
+    background-color: #4682b4
 }
+
+    footer > p {
+        text-align: center;
+        font-size: 12pt;
+        font-weight: bold;
+        color: white;
+        margin: 0px;
+    }

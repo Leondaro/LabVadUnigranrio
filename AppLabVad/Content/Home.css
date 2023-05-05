@@ -1,5 +1,109 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+.navbar_custom {
+    display: flex;
+    background-color: #4682b4;
+}
+.navbar_brand {
+    float: left
+}
+.navbar_body {
+    float: right;
+    display: flex;
+    justify-content: right;
+}
+.navitem_custom {
+    background-color: #4682b4;
+    border: 3px solid #363636;
+    border-right: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px #000;
+    margin: 0 .5rem;
+    transition: border .5s;
+}
+.navlink_custom {
+    padding: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #282923;
+}
+
+.navitem_custom:hover,
+.navitem_custom.current {
+    border: 3px solid #fffafa;
+    border-right: 0;
+    box-shadow: 0px 0px 3px #fff;
+    transition: box-shadow 0.35s;
+}
+    .navitem_custom:hover > a.navlink_custom,
+    .navitem_custom.current > a.navlink_custom {
+        color: #fffafa !important;
+        text-decoration: none;
+        transition: color 0.25s;
+    }
+
+.switch_label {
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: #282923;
+}
+
+.switch_rail {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 18px;
+    margin-left: 30%;
+    margin-top: 5px;
+}
+    .switch_rail input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider_button {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 17px;
+}
+    .slider_button:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: -1px;
+        bottom: -1px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+input:checked + .slider_button {
+    background-color: #9acd32; /* Cor anterior: #2196F3; */
+}
+input:focus + .slider_button {
+    box-shadow: 0 0 1px #9acd32; /* Cor anterior: #2196F3; */
+}
+input:checked + .slider_button:before {/* Faz o deslizamento do botão */
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateY(22px);
+    transform: translateX(22px);
+}
+
+
+
+
+
 body#Home {
     background-color: #FAF0E6;
     padding-bottom: 0px;
@@ -13,34 +117,9 @@ div#container {
     min-height: 100vh;
 }
 
-div#barraMenu {
-    margin-top: inherit;
-    background-color: #4682b4; /* SteelBlue */
-}
-
-.Menu {
-  align-items: center;
-}
 
 img#logo {
-  height: 85%;
-  margin-left: 4vw;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.Menu-item {
-    display: flex; /* Exibe os itens do menu em horizontal */
-    background-color: #4682b4; /* SteelBlue */
-    border-left: 3px solid #363636;
-    border-bottom: 3px solid #363636;
-    border-top: 3px solid #363636;
-    border-radius: 5px;
-    box-shadow: 0px 0px 1px #000;
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    font-weight: bolder;
-    color: #282923;
+    height: 85%;
 }
 
 .whiteTheme {
@@ -49,32 +128,6 @@ img#logo {
 
 .darkTheme {
     background-color: #282923;
-}
-.White {
-    transition: border 1s;
-}
-    .White:hover, a.current {
-        border-left: 3px solid #fffafa;
-        border-bottom: 3px solid #fffafa;
-        border-top: 3px solid #fffafa;
-        border-radius: 5px;
-        box-shadow: 0px 0px 3px #fff;
-        color: #fffafa !important;
-        transition: box-shadow 0.5s;
-        text-decoration: none; 
-    }
-
-a.LinkMenu:hover {
-    text-decoration: none; 
-    transition: color 0.5s;
-}
-
-a.LinkMenu:link {
-    padding: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration: none; 
-    transition: color 0.5s;
 }
 
 div#modoNoturno {
@@ -85,67 +138,8 @@ div#modoNoturno {
   align-content: center;
 }
 
-.Noturno {
-  font-size: 10pt;
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
-  color: #282923;
-}
-/* Trilho de deslize */
-.Switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 18px;
-  margin-left: 30%;
-  margin-top: 5px;
-}
 
-.Switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-/* Botão de deslize */
-.Slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 17px;
-}
 
-.Slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: -1px;
-  bottom: -1px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .Slider {
-  background-color: #9acd32; /* Cor anterior: #2196F3; */
-}
-
-input:focus + .Slider {
-  box-shadow: 0 0 1px #9acd32; /* Cor anterior: #2196F3; */
-}
-/* Faz o deslizamento do botão */
-input:checked + .Slider:before {
-  -webkit-transform: translateX(22px);
-  -ms-transform: translateY(22px);
-  transform: translateX(22px);
-}
 
 .Box {
     margin-left: 30px;
