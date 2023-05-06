@@ -1,211 +1,171 @@
 ﻿<link href="~/Content/Ajuda.css" rel="stylesheet" />
 <div id="ajuda">
-    <div class="hero is-warning">
-        <div class="hero-body">
-            <h1 class="title is-1"> Como usar o LabVad: </h1>
-            <h2 class="subtitle"> Um tutorial rápido e objetivo </h2>
-        </div>
+    <div class="well help_banner">
+        <h2 class="well-sm"> Como usar o LabVad: </h2>
+        <h3> Um tutorial rápido e objetivo </h3>
     </div>
 
     <section>
-        <h2 class="title is-2 titleHelp"> Escolha um dos experimentos: </h2>
-        <div class="tile is-ancestor">
-            <div class="tile is-parent is-vertical">
-                <div class="tile is-parent is-vertical box has-background-info">
-                    <div class="tile is-parent">
-                        <div class="tile is-child">
-                            <!-- Seção de título: Leds -->
-                            <div class="columns is-mobile is-variable is-0">
-                                <div class="column is-narrow">
-                                    <span id="ledAngleDown" class="icon button is-warning is-large"
-                                          data-toggle="collapse" data-target="#ledCollapse">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                    <span id="ledAngleUp" class="icon button is-warning is-large is-hidden">
-                                        <i class="fas fa-angle-up"></i>
-                                    </span>
-                                </div>
-                                <div class="column">
-                                    <h1 class="title TitleCollapse"> LEDs: </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Seção de "colapso": Leds -->
-                    <div class="collapse" id="ledCollapse">
-                        <div class="tile is-parent">
-                            <div class="tile is-child is-4">
-                                <figure class="image box">
-                                    <img class="has-ratio" src="~/Content/_imagens/leds.png">
-                                </figure>
-                            </div>
-                            <div class="tile is-child">
-                                <iframe class="iframe-info" src="~/Content/iframes/led.html" name="led" id="frame0"></iframe>
-                            </div>
-                        </div>
+        <div>
+            <h2 class="well-sm title_help my-4"> Escolha um dos experimentos: </h2>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row px-3">
+                    <span id="ledAngleDown" class="btn btn-warning" data-toggle="collapse" data-target="#ledCollapse">
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <span id="ledAngleUp" class="btn btn-warning hidden">
+                        <i class="fas fa-angle-up"></i>
+                    </span>
+                    <div>
+                        <h2 class="my-0 mx-3"> LEDs: </h2>
                     </div>
                 </div>
-
-                <div class="tile is-parent is-vertical box has-background-info">
-                    <div class="tile is-parent">
-                        <div class=" tile is-child">
-                            <!-- Seção de título: Servo Motor -->
-                            <div class="columns is-mobile is-variable is-0">
-                                <div class="column is-narrow">
-                                    <span id="servoAngleDown" class="icon button is-warning is-large"
-                                          data-toggle="collapse" data-target="#servoCollapse">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                    <span id="servoAngleUp" class="icon button is-warning is-large is-hidden">
-                                        <i class="fas fa-angle-up"></i>
-                                    </span>
-                                </div>
-                                <div class="column">
-                                    <h1 class="title TitleCollapse"> Servo Motor: </h1>
-                                </div>
+            </div>
+            <div class="panel-body">
+                <div class="collapse" id="ledCollapse">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="~/Content/_imagens/leds.png">
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="~/Content/iframes/led.html" name="led" id="frame0"></iframe>
                             </div>
                         </div>
                     </div>
-                    <!-- Seção de "colapso": Servo Motor -->
-                    <div class="collapse" id="servoCollapse">
-                        <div class="tile is-parent">
-                            <div class="tile is-child is-4">
-                                <figure class="image box">
-                                    <img class="has-ratio" src="~/Content/_imagens/servo.png">
-                                </figure>
-                            </div>
-                            <div class="tile is-child">
-                                <iframe class="iframe-info" src="~/Content/iframes/servo.html" name="servo" id="frame1"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tile is-parent is-vertical box has-background-info">
-                    <div class="tile is-parent">
-                        <div class=" tile is-child">
-
-                            <!-- Seção de título: Motor DC -->
-                            <div class="columns is-mobile is-variable is-0">
-                                <div class="column is-narrow">
-                                    <span id="dcAngleDown" class="icon button is-warning is-large"
-                                          data-toggle="collapse" data-target="#dcCollapse">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                    <span id="dcAngleUp" class="icon button is-warning is-large is-hidden">
-                                        <i class="fas fa-angle-up"></i>
-                                    </span>
-                                </div>
-                                <div class="column">
-                                    <h1 class="title TitleCollapse"> Motor DC: </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Seção de "colapso": Motor DC -->
-                    <div class="collapse" id="dcCollapse">
-                        <div class="tile is-parent">
-                            <div class="tile is-child is-4">
-                                <figure class="image box">
-                                    <img class="has-ratio" src="~/Content/_imagens/dc.jpg">
-                                </figure>
-                            </div>
-                            <div class="tile is-child">
-                                <iframe class="iframe-info" src="~/Content/iframes/dc.html" name="dc" id="frame2"></iframe>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="tile is-parent is-vertical box has-background-info">
-                    <div class="tile is-parent">
-                        <div class=" tile is-child">
-                            <!-- Seção de título: Display de Caracteres -->
-                            <div class="columns is-mobile is-variable is-0">
-                                <div class="column is-narrow">
-                                    <span id="disAngleDown" class="icon button is-warning is-large"
-                                          data-toggle="collapse" data-target="#disCollapse">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                    <span id="disAngleUp" class="icon button is-warning is-large is-hidden">
-                                        <i class="fas fa-angle-up"></i>
-                                    </span>
-                                </div>
-                                <div class="column">
-                                    <h1 class="title TitleCollapse"> Display de Caracteres: </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Seção de "colapso": Display de Caracteres -->
-                    <div class="collapse" id="disCollapse">
-                        <div class="tile is-parent">
-                            <div class="tile is-child is-4">
-                                <figure class="image box">
-                                    <img class="has-ratio" src="~/Content/_imagens/carac.png">
-                                </figure>
-                            </div>
-                            <div class="tile is-child">
-                                <iframe class="iframe-info" src="~/Content/iframes/dispcarac.html" name="carac" id="frame3"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tile is-parent is-vertical box has-background-info">
-                    <div class="tile is-parent">
-                        <div class=" tile is-child">
-                            <!-- Seção de título> Display de 8 Segmentos -->
-                            <div class="columns is-mobile is-variable is-0">
-                                <div class="column is-narrow">
-                                    <span id="segAngleDown" class="icon button is-warning is-large"
-                                          data-toggle="collapse" data-target="#segCollapse">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                    <span id="segAngleUp" class="icon button is-warning is-large is-hidden">
-                                        <i class="fas fa-angle-up"></i>
-                                    </span>
-                                </div>
-                                <div class="column">
-                                    <h1 class="title TitleCollapse"> Display de 8 Segmentos: </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Seção de "colapso": Display de 8 Segmentos -->
-                    <div class="collapse" id="segCollapse">
-                        <div class="tile is-parent">
-                            <div class="tile is-child is-4">
-                                <figure class="image box">
-                                    <img class="has-ratio" src="~/Content/_imagens/8seg.png">
-                                </figure>
-                            </div>
-                            <div class="tile is-child">
-                                <iframe class="iframe-info" src="~/Content/iframes/disp8seg.html" name="8seg" id="frame4"></iframe>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
-
-
-        <!--
-        <div class="level-item">
-            <span id="expAngleDown" class="icon button is-link is-large"
-                  data-toggle="collapse" data-target="#expCollapse">
-                <i class="fas fa-angle-down"></i>
-            </span>
-            <span id="expAngleUp" class="icon button is-link is-large is-hidden">
-                <i class="fas fa-angle-up"></i>
-            </span>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row px-3">
+                    <span id="servoAngleDown" class="btn btn-warning"
+                          data-toggle="collapse" data-target="#servoCollapse">
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <span id="servoAngleUp" class="btn btn-warning hidden">
+                        <i class="fas fa-angle-up"></i>
+                    </span>
+                    <div>
+                        <h2 class="my-0 mx-3"> Servo Motor: </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="collapse" id="servoCollapse">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="~/Content/_imagens/servo.png">
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="~/Content/iframes/servo.html" name="servo" id="frame1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="collapse" id="expCollapse">
-
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row px-3">
+                    <span id="dcAngleDown" class="btn btn-warning" data-toggle="collapse" data-target="#dcCollapse">
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <span id="dcAngleUp" class="btn btn-warning hidden">
+                        <i class="fas fa-angle-up"></i>
+                    </span>
+                    <div>
+                        <h2 class="my-0 mx-3"> Motor DC: </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="collapse" id="dcCollapse">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="~/Content/_imagens/dc.jpg">
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="~/Content/iframes/dc.html" name="dc" id="frame2"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        -->
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row px-3">
+                    <span id="disAngleDown" class="btn btn-warning"
+                          data-toggle="collapse" data-target="#disCollapse">
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <span id="disAngleUp" class="btn btn-warning hidden">
+                        <i class="fas fa-angle-up"></i>
+                    </span>
+                    <div>
+                        <h2 class="my-0 mx-3"> Display de Caracteres: </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="collapse" id="disCollapse">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="~/Content/_imagens/carac.png">
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="~/Content/iframes/dispcarac.html" name="carac" id="frame3"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row px-3">
+                    <span id="segAngleDown" class="btn btn-warning"
+                          data-toggle="collapse" data-target="#segCollapse">
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <span id="segAngleUp" class="btn btn-warning hidden">
+                        <i class="fas fa-angle-up"></i>
+                    </span>
+                    <div>
+                        <h2 class="my-0 mx-3"> Display de 8 Segmentos: </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="collapse" id="segCollapse">
+                    <div class="row">
+                        <div class="col">
+                            <figure class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="~/Content/_imagens/8seg.png">
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="~/Content/iframes/disp8seg.html" name="8seg" id="frame4"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </div>

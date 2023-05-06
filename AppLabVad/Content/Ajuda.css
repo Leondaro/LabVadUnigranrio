@@ -1,14 +1,3 @@
-﻿.TitleCollapse {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-}
-
-.iframe-info {
-    width: 100%;
-    height: 100%;
-}
-
-#ajuda {
-    margin: 5px;
+﻿.help_banner {
+    background-image: linear-gradient(180deg, #ffb000, #ffeaba);
 }
