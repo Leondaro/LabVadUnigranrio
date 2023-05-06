@@ -1,66 +1,63 @@
 ﻿<link href="~/Content/Agendamento.css" rel="stylesheet" />
 <div class="container">
     <div id="agendamento">
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h2 class="title is-2 titleHelp"> Agendamento: </h2>
-                    <h3 class="title is-3">
-                        Escolha o dia e depois a hora que deseja reservar para o uso do experimento. Para desistir do horário escolhido, selecione-o novamente.
-                    </h3>
-                    <div id="calendar">
-                        <script>
-                            function calendario() {
-                                let CalendarEl = document.getElementById('calendar');
-                                calendar = new FullCalendar.Calendar(CalendarEl, {
-                                    plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid', 'list'],
-                                    defaultView: 'dayGridMonth',
-                                    height: 'auto',
-                                    locale: 'pt-br',
-                                    themeSystem: 'bootstrap',
-                                    header: {
-                                        left: 'prev, today',
-                                        center: 'title',
-                                        right: 'next'
-                                    },
-                                    validRange: {
-                                        start: new Date()
-                                    },
-                                    eventLimit: true,
-                                    selectable: true,
-                                    dateClick: function (info) {
-                                        let inputDay = document.getElementById("dia");
-                                        //inputDay.value = info.dateStr
-                                        inputDay.value = formatDateStr(info.dateStr);
+        <div class="well-sm">
+            <h2 class="well-sm title_help"> Agendamento: </h2>
+            <h3>
+                Escolha o dia e depois a hora que deseja reservar para o uso do experimento. Para desistir do horário escolhido, selecione-o novamente.
+            </h3>
+        </div>
+                    
+        <div id="calendar">
+            <script>
+                function calendario() {
+                    let CalendarEl = document.getElementById('calendar');
+                    calendar = new FullCalendar.Calendar(CalendarEl, {
+                        plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid', 'list'],
+                        defaultView: 'dayGridMonth',
+                        height: 'auto',
+                        locale: 'pt-br',
+                        themeSystem: 'bootstrap',
+                        header: {
+                            left: 'prev, today',
+                            center: 'title',
+                            right: 'next'
+                        },
+                        validRange: {
+                            start: new Date()
+                        },
+                        eventLimit: true,
+                        selectable: true,
+                        dateClick: function (info) {
+                            let inputDay = document.getElementById("dia");
+                            //inputDay.value = info.dateStr
+                            inputDay.value = formatDateStr(info.dateStr);
 
-                                        $("#Conteudo").carousel(1);
-                                        $("#calendar").css('pointer-events', 'none');
-                                        CalendarRender(info.dateStr);
-                                        //info.dayEl.style.backgroundColor = 'rgba(190, 240, 241, 0.5)';
-                                        /*
-                                        $(this).fullCalendar('changeView', 'timeGrid', 'info.dateStr');
-                                        function MudarView(dia) {
-                                            alert(dia);
-                                            $("#CalendarEl").fullCalendar('changeView', 'timeGrid');
-                                            $("#CalendarEl").fullCalendar('gotoDate', dia);
-                                        }
-                                        */
-                                    }
-                                });
-                                calendar.render();
+                            $("#Conteudo").carousel(1);
+                            $("#calendar").css('pointer-events', 'none');
+                            CalendarRender(info.dateStr);
+                            //info.dayEl.style.backgroundColor = 'rgba(190, 240, 241, 0.5)';
+                            /*
+                            $(this).fullCalendar('changeView', 'timeGrid', 'info.dateStr');
+                            function MudarView(dia) {
+                                alert(dia);
+                                $("#CalendarEl").fullCalendar('changeView', 'timeGrid');
+                                $("#CalendarEl").fullCalendar('gotoDate', dia);
                             }
+                            */
+                        }
+                    });
+                    calendar.render();
+                }
 
-                            function formatDateStr(dateStr) {
-                                let dia = dateStr.substring(8, 10);
-                                let mes = dateStr.substring(5, 7);
-                                let ano = dateStr.substring(0, 4);
+                function formatDateStr(dateStr) {
+                    let dia = dateStr.substring(8, 10);
+                    let mes = dateStr.substring(5, 7);
+                    let ano = dateStr.substring(0, 4);
 
-                                return dia + "/" + mes + "/" + ano;
-                            }
-                        </script>
-                    </div>
-                </div>
-            </div>
+                    return dia + "/" + mes + "/" + ano;
+                }
+            </script>
         </div>
     </div>
 </div>

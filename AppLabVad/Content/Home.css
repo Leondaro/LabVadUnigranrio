@@ -100,7 +100,12 @@ input:checked + .slider_button:before {/* Faz o deslizamento do botão */
     transform: translateX(22px);
 }
 
-
+.h_line {
+    border: 1px solid gray;
+}
+.v_line {
+    border-left: 2px solid gray;
+}
 
 
 
@@ -141,10 +146,6 @@ div#modoNoturno {
 
 
 
-.Box {
-    margin-left: 30px;
-}
-
 div#Conteudo {
     width: 100%;
     height: auto;
@@ -177,15 +178,4 @@ div#Conteudo {
 .item {
     height: auto;
     min-height: inherit;
-}
-
-hr.line {
-    border: 1px solid gray;
-}
-
-.titleHelp {
-    font-size: 20px;
-    padding: 5px;
-    background-color: #E3E3E3;
-    color: #4C4C4C;
 }

@@ -1,279 +1,267 @@
 ﻿<link href="~/Content/Agendamento.css" rel="stylesheet" />
 <div class="container">
-    <div class="tile is-ancestor">
-        <div class="tile is-parent is-vertical">
-            <div class="tile is-parent">
-                <div class="tile is-child">
-                    <div id="reserva">
-                        <form id="myReserve">
-                            <div class="scheduling_day">
-                                <div class="row d-flex justify-content-between align-items-center">
-                                    <div class="btn-info p-2 rounded">
-                                        <a id="btnRetorno" class="button is-info is-medium">
-                                            <span class="">
-                                                <i class="fas fa-arrow-left"></i>
-                                            </span>
-                                            <span>Voltar</span>
-                                        </a>
-                                    </div>
-                                    <h3 class="m-0">
-                                        <span class="label label-warning">Sua Reserva</span>
-                                    </h3>
-                                </div>
-                                <div class="row d-flex">
-                                    <div class="col d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Hora:</span>
-                                            <input id="hora" class="form-control" name="horario" type="text" value="Hora escolhida" readonly />
-                                        </div>
-                                    </div>
-                                    <div class="col d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Dia:</span>
-                                            <input id="dia" class="form-control" name="data" type="text" value="Dia escolhido" readonly />
-                                        </div>
-                                    </div>
-                                    <div class="col d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Duração:</span>
-                                            <select id="tempo" class="form-control" name="duracao" form="myReserve" required>
-                                                <option value="1">30 mins</option>
-                                                <option value="2">1 hora </option>
-                                                <option value="3">1 hora e 30 mins</option>
-                                                <option value="4">2 horas</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-end">
-                                    <input id="btnEnviar" class="btn-success p-2 rounded" type="submit" value="Reservar" disabled />
-                                </div>
-                            </div>
-                        </form>
+    <div id="reserva">
+        <form id="myReserve">
+            <div class="scheduling_day">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="btn-info p-2 rounded">
+                        <a id="btnRetorno" class="button is-info is-medium">
+                            <span class="">
+                                <i class="fas fa-arrow-left"></i>
+                            </span>
+                            <span>Voltar</span>
+                        </a>
+                    </div>
+                    <h3 class="m-0">
+                        <span class="label label-warning">Sua Reserva</span>
+                    </h3>
+                </div>
+                <div class="row d-flex">
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Hora:</span>
+                            <input id="hora" class="form-control" name="horario" type="text" value="Hora escolhida" readonly />
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Dia:</span>
+                            <input id="dia" class="form-control" name="data" type="text" value="Dia escolhido" readonly />
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Duração:</span>
+                            <select id="tempo" class="form-control" name="duracao" form="myReserve" required>
+                                <option value="1">30 mins</option>
+                                <option value="2">1 hora </option>
+                                <option value="3">1 hora e 30 mins</option>
+                                <option value="4">2 horas</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+                <div class="row d-flex justify-content-end">
+                    <input id="btnEnviar" class="btn-success p-2 rounded" type="submit" value="Reservar" disabled />
+                </div>
             </div>
-            <div class="tile is-parent">
-                <div class="tile is-child">
-                    <div id="calendarTimeGrid">
-                        <script>
-                            function CalendarRender(dia) {
-                                let delay = 500;
-                                setTimeout(function () {
-                                    $("#calendar").css('pointer-events', 'auto');
-                                }, delay);
+        </form>
+    </div>
+    <div id="calendarTimeGrid">
+        <script>
+            function CalendarRender(dia) {
+                let delay = 500;
+                setTimeout(function () {
+                    $("#calendar").css('pointer-events', 'auto');
+                }, delay);
 
-                                $("#calendarTimeGrid").empty();
+                $("#calendarTimeGrid").empty();
 
-                                let calendarEl = document.getElementById('calendarTimeGrid');
-                                calendarDay = new FullCalendar.Calendar(calendarEl, {
-                                    plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid'],
-                                    defaultDate: dia,
-                                    defaultView: 'timeGrid',
-                                    height: 'parent',
-                                    locale: 'pt-br',
-                                    themeSystem: 'bootstrap',
-                                    header: {
-                                        left: 'prev',
-                                        center: 'title',
-                                        right: 'next',
-                                    },
-                                    validRange: {
-                                        start: new Date()
-                                    },
-                                    scrollTime: '00:00:00',
-                                    selectable: false,
-                                    selectMirror: true,
-                                    allDaySlot: false,
-                                    displayEventTime: true,
-                                    eventClick: function (info) {
-                                        if (info.event.id != 'indisponivel') {
-                                            info.event.remove();
-                                            let inputTimeStart = document.getElementById("hora");
-                                            inputTimeStart.value = 'Hora escolhida';
-                                        }
-                                    },
-                                    dateClick: function (info) {
-                                        let previewEvent = calendarDay.getEventById('unsaved');
-                                        //Remove evento anterior, caso exista
-                                        if (previewEvent != null)
-                                            previewEvent.remove();
+                let calendarEl = document.getElementById('calendarTimeGrid');
+                calendarDay = new FullCalendar.Calendar(calendarEl, {
+                    plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid'],
+                    defaultDate: dia,
+                    defaultView: 'timeGrid',
+                    height: 'parent',
+                    locale: 'pt-br',
+                    themeSystem: 'bootstrap',
+                    header: {
+                        left: 'prev',
+                        center: 'title',
+                        right: 'next',
+                    },
+                    validRange: {
+                        start: new Date()
+                    },
+                    scrollTime: '00:00:00',
+                    selectable: false,
+                    selectMirror: true,
+                    allDaySlot: false,
+                    displayEventTime: true,
+                    eventClick: function (info) {
+                        if (info.event.id != 'indisponivel') {
+                            info.event.remove();
+                            let inputTimeStart = document.getElementById("hora");
+                            inputTimeStart.value = 'Hora escolhida';
+                        }
+                    },
+                    dateClick: function (info) {
+                        let previewEvent = calendarDay.getEventById('unsaved');
+                        //Remove evento anterior, caso exista
+                        if (previewEvent != null)
+                            previewEvent.remove();
 
 
-                                        let today = new Date();
-                                        let date = today.getDate();
-                                        let month = today.getMonth();
-                                        let year = today.getFullYear();
+                        let today = new Date();
+                        let date = today.getDate();
+                        let month = today.getMonth();
+                        let year = today.getFullYear();
 
-                                        let selectedDate = info.dateStr;
-                                        let selectedDay = selectedDate.substring(8, 10);
-                                        let selectedMonth = selectedDate.substring(5, 7);
-                                        let selectedYear = selectedDate.substring(0, 4);
+                        let selectedDate = info.dateStr;
+                        let selectedDay = selectedDate.substring(8, 10);
+                        let selectedMonth = selectedDate.substring(5, 7);
+                        let selectedYear = selectedDate.substring(0, 4);
 
-                                        let validOption = true;
-                                        let time = selectedDate.substring(11, 16);
-                                        let selectedHour = time.substring(0, 2);
-                                        let selectedMin = time.substring(3, 5);
+                        let validOption = true;
+                        let time = selectedDate.substring(11, 16);
+                        let selectedHour = time.substring(0, 2);
+                        let selectedMin = time.substring(3, 5);
 
-                                        //Verifica se a hora selecionada está de acordo com a hora disponível.
-                                        if (year == selectedYear) {
-                                            if (++month == parseInt(selectedMonth, 10)) {
-                                                if (date == parseInt(selectedDay, 10)) {
-                                                    let hourNow = Hours();
-                                                    let minutesNow = Minutes();
+                        //Verifica se a hora selecionada está de acordo com a hora disponível.
+                        if (year == selectedYear) {
+                            if (++month == parseInt(selectedMonth, 10)) {
+                                if (date == parseInt(selectedDay, 10)) {
+                                    let hourNow = Hours();
+                                    let minutesNow = Minutes();
 
-                                                    if (selectedHour < parseInt(hourNow, 10)) {
-                                                        validOption = false;
-                                                        WarningMsg(time, hourNow, minutesNow);
-                                                    }
-                                                    else if (selectedHour == parseInt(hourNow, 10))
-                                                        if ((selectedMin < 30) && (parseInt(minutesNow, 10) >= 30)) {
-                                                            validOption = false;
-                                                            WarningMsg(time, hourNow, minutesNow);
-                                                        }
-                                                }
-                                            }
-                                        }
-                                        //Renderiza o evento após validado
-                                        if (validOption) {
-                                            let start = selectedDate.substring(0, 19);
-                                            let end = selectedDate.substring(0, 11) + getDurationTime(selectedHour, selectedMin);
-
-                                            let newEvent = {
-                                                id: 'unsaved',
-                                                title: 'Reserva de:',
-                                                start: start,
-                                                end: end,
-                                                allDay: false
-                                            };
-
-                                            calendarDay.addEvent(newEvent);
-
-                                            //Envia a hora para confirmação
-                                            let inputTimeStart = document.getElementById("hora");
-                                            inputTimeStart.value = time + 'h';
-
-                                            //Envia a data para confirmação
-                                            let inputDay = document.getElementById("dia");
-                                            inputDay.value = selectedDay + '/' + selectedMonth + '/' + selectedYear;
-
-                                            //CriarEvento(start);
-                                            //CalendarRender(selectedDate, start, time);
-                                            //AlterColorTimeGrid();
-                                        }
+                                    if (selectedHour < parseInt(hourNow, 10)) {
+                                        validOption = false;
+                                        WarningMsg(time, hourNow, minutesNow);
                                     }
-                                });
-                                calendarDay.render();
-                                //AlterColorTimeGrid();
-                                calendarDay.addEvent(getTimeUnvailable());
+                                    else if (selectedHour == parseInt(hourNow, 10))
+                                        if ((selectedMin < 30) && (parseInt(minutesNow, 10) >= 30)) {
+                                            validOption = false;
+                                            WarningMsg(time, hourNow, minutesNow);
+                                        }
+                                }
+                            }
+                        }
+                        //Renderiza o evento após validado
+                        if (validOption) {
+                            let start = selectedDate.substring(0, 19);
+                            let end = selectedDate.substring(0, 11) + getDurationTime(selectedHour, selectedMin);
+
+                            let newEvent = {
+                                id: 'unsaved',
+                                title: 'Reserva de:',
+                                start: start,
+                                end: end,
+                                allDay: false
+                            };
+
+                            calendarDay.addEvent(newEvent);
+
+                            //Envia a hora para confirmação
+                            let inputTimeStart = document.getElementById("hora");
+                            inputTimeStart.value = time + 'h';
+
+                            //Envia a data para confirmação
+                            let inputDay = document.getElementById("dia");
+                            inputDay.value = selectedDay + '/' + selectedMonth + '/' + selectedYear;
+
+                            //CriarEvento(start);
+                            //CalendarRender(selectedDate, start, time);
+                            //AlterColorTimeGrid();
+                        }
+                    }
+                });
+                calendarDay.render();
+                //AlterColorTimeGrid();
+                calendarDay.addEvent(getTimeUnvailable());
                                 
-                                if ($('#btnNoturno')[0].checked) {
-                                    let themeState = $('#calendarTimeGrid').find(".fc-head")
-                                    themeState.addClass("has-background-light");
-                                }
-                                $("#btnNoturno").change(function () {
-                                    let timeGrid = $('#calendarTimeGrid');
-                                    let themeState = timeGrid.find(".fc-head")
-                                    themeState.toggleClass("has-background-light");
-                                });
-                            }
+                if ($('#btnNoturno')[0].checked) {
+                    let themeState = $('#calendarTimeGrid').find(".fc-head")
+                    themeState.addClass("has-background-light");
+                }
+                $("#btnNoturno").change(function () {
+                    let timeGrid = $('#calendarTimeGrid');
+                    let themeState = timeGrid.find(".fc-head")
+                    themeState.toggleClass("has-background-light");
+                });
+            }
 
-                            $("#btnRetorno").click(function () {
-                                $("#Conteudo").carousel(0);
-                            });
+            $("#btnRetorno").click(function () {
+                $("#Conteudo").carousel(0);
+            });
 
-                            function Hours() {
-                                let date = new Date();
-                                let hours = addZero(date.getHours());
-                                return hours;
-                            }
+            function Hours() {
+                let date = new Date();
+                let hours = addZero(date.getHours());
+                return hours;
+            }
 
-                            function Minutes() {
-                                let date = new Date();
-                                let mins = addZero(date.getMinutes());
-                                return mins;
-                            }
+            function Minutes() {
+                let date = new Date();
+                let mins = addZero(date.getMinutes());
+                return mins;
+            }
 
-                            function addZero(i) {
-                                if (i < 10)
-                                    i = "0" + i;
-                                return i;
-                            }
+            function addZero(i) {
+                if (i < 10)
+                    i = "0" + i;
+                return i;
+            }
 
-                            function getDurationTime(hours, minutes) {
-                                let selected = document.getElementById("tempo");
-                                let value = parseInt(selected.value);
-                                let end;
+            function getDurationTime(hours, minutes) {
+                let selected = document.getElementById("tempo");
+                let value = parseInt(selected.value);
+                let end;
 
-                                switch (value) {
-                                    case 1:
-                                        //'00:29'
-                                        end = hours + ':' + (parseInt(minutes) + 29);
-                                        return end + ':00';
-                                    case 2:
-                                        //'00:59'
-                                        if (minutes == '00')
-                                            end = hours + ':' + (parseInt(minutes) + 59);
-                                        else
-                                            end = addZero(parseInt(hours) + 1) + ':' + minutes;
+                switch (value) {
+                    case 1:
+                        //'00:29'
+                        end = hours + ':' + (parseInt(minutes) + 29);
+                        return end + ':00';
+                    case 2:
+                        //'00:59'
+                        if (minutes == '00')
+                            end = hours + ':' + (parseInt(minutes) + 59);
+                        else
+                            end = addZero(parseInt(hours) + 1) + ':' + minutes;
 
-                                        return end + ':00';
-                                    case 3:
-                                        //'01:29'
-                                        if (minutes == '00')
-                                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 29);
-                                        else
-                                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 29);
+                        return end + ':00';
+                    case 3:
+                        //'01:29'
+                        if (minutes == '00')
+                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 29);
+                        else
+                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 29);
 
-                                        return end + ':00';
-                                    case 4:
-                                        //'01:59'
-                                        if (minutes == '00')
-                                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 59);
-                                        else
-                                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 59);
+                        return end + ':00';
+                    case 4:
+                        //'01:59'
+                        if (minutes == '00')
+                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 59);
+                        else
+                            end = addZero(parseInt(hours) + 1) + ':' + (parseInt(minutes) + 59);
 
-                                        return end + ':00';
-                                }
-                            }
+                        return end + ':00';
+                }
+            }
                             
-                            function getTimeUnvailable() {
-                                let minutes;
-                                let date = new Date();
-                                let day = date.getDate();
-                                let month = date.getMonth();
-                                let year = date.getFullYear();
-                                let today = year + '-' + addZero(++month) + '-' + day;
+            function getTimeUnvailable() {
+                let minutes;
+                let date = new Date();
+                let day = date.getDate();
+                let month = date.getMonth();
+                let year = date.getFullYear();
+                let today = year + '-' + addZero(++month) + '-' + day;
 
-                                //Verifica se há hora mínima de reserva indisponível 
-                                if ((Hours() == '00') && (parseInt(Minutes()) < 30))
-                                    return null;
-                                //Arredonda os minutos 
-                                if (parseInt(Minutes()) < 30)
-                                    minutes = '00';
-                                else
-                                    minutes = '30';
-                                //Dados para criação de um evento de indisponibilidade
-                                let dataEvent = {
-                                    id: 'indisponivel',
-                                    title: "Horário obsoleto",
-                                    start: today + 'T00:00:00',
-                                    end: today + 'T' + Hours() + ':' + minutes + ':00',
-                                    backgroundColor: 'gray',
-                                    borderColor: 'gray'
-                                }
+                //Verifica se há hora mínima de reserva indisponível 
+                if ((Hours() == '00') && (parseInt(Minutes()) < 30))
+                    return null;
+                //Arredonda os minutos 
+                if (parseInt(Minutes()) < 30)
+                    minutes = '00';
+                else
+                    minutes = '30';
+                //Dados para criação de um evento de indisponibilidade
+                let dataEvent = {
+                    id: 'indisponivel',
+                    title: "Horário obsoleto",
+                    start: today + 'T00:00:00',
+                    end: today + 'T' + Hours() + ':' + minutes + ':00',
+                    backgroundColor: 'gray',
+                    borderColor: 'gray'
+                }
 
-                                return dataEvent;
-                            }
+                return dataEvent;
+            }
                             
-                            function WarningMsg(time, hourNow, minutesNow) {
-                                alert("O horário selecionado (" + time + ") não é válido.\nHorário atual: " +
-                                    hourNow.toString() + ":" + minutesNow.toString() + "\nPor favor, selecione um horário disponível.");
-                            }
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
+            function WarningMsg(time, hourNow, minutesNow) {
+                alert("O horário selecionado (" + time + ") não é válido.\nHorário atual: " +
+                    hourNow.toString() + ":" + minutesNow.toString() + "\nPor favor, selecione um horário disponível.");
+            }
+        </script>
     </div>
 </div>
