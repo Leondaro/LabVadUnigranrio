@@ -2,6 +2,10 @@
     margin: 0%;
 }
 
+ul {
+    list-style:none;
+}
+
 body, ul, div {
     transition: background-color 1s;
 }
@@ -33,3 +37,10 @@ footer {
         color: white;
         margin: 0px;
     }
+
+.title_help {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #E3E3E3;
+    color: #4C4C4C;
+}
