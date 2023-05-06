@@ -2,84 +2,77 @@
 <div id="execucao">
     @if (false)
     {
-        <h2 class="title is-2 titleHelp"> Execução: </h2>
-        <h3 class="title is-3">Você precisa agendar um horário primeiro. Vá para a aba de Agendamento e veja se o horário está vago.</h3>
+        <div class="well-sm">
+            <h2 class="well-sm title_help">Experimento:</h2>
+            <h3>Você precisa agendar um horário primeiro. Vá para a aba de Agendamento e veja se o horário está vago.</h3>
+        </div>
     }
     else
     {
-        <div class="level-item">
-            <h3 class="title is-3"> Um guia simples sobre cada componente do experimento está disponível na aba de Ajuda.</h3>
+        <div class="well-sm mb-5">
+            <h2 class="well-sm title_help">Experimento:</h2>
+            <h3> Um guia simples sobre cada componente do experimento está disponível na aba de Ajuda.</h3>
         </div>
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <div class="tile is-parent">
-                    <div class="tile is-child">
-                        <div class="WrapperVideo">
-                            <h4 class="tag title is-4 is-rounded is-danger">Ao Vivo</h4>
-                            <hr id="video" />
-                            <div class="VideoBorder">
-                                <video class="has-ratio" controls>
-                                    <source src="~/Content/_imagens/videoExemplo.mp4" type="video/mp4">
-                                    Seu Browser não suporta a tag Video
-                                </video>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row py-4">
+            <div class="col">
+                <h4 class="text-danger text-center">Ao Vivo</h4>
+                <hr id="video" />
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item">
+                        <source src="~/Content/_imagens/videoExemplo.mp4" type="video/mp4">
+                        Seu Browser não suporta a tag Video
+                    </video>
                 </div>
-                <div class="tile is-parent">
-                    <div class="tile is-child">
-                        <div class="WrapperCode has-ratio">
-                            <ul class="nav nav-tabs">
-                                <li class="active Abas Left"><a class="btnPanel" data-toggle="tab" href="#editorControls">Edição</a></li>
-                                <li class="Abas Right"><a class="btnPanel" data-toggle="tab" href="#saveCod">Códigos Salvos</a></li>
-                                <li class="Abas Right"><a class="btnPanel" data-toggle="tab" href="#recs">Gravações</a></li>
-                            </ul>
-                            <div class="tab-content AbaContent">
-                                <div id="editorControls" class="tab-pane fade in active">
-                                    <div class="is-flex justify-content-end p-1">
-                                        <div class="is-flex justify-content-between column is-2">
-                                            <a class="btn btn-primary">
-                                                <span class="icon is-small is-left"><i class="fas fa-save"></i></span>
-                                            </a>
-                                            <a class="btn btn-primary">
-                                                <span class="icon is-small is-left"><i class="fas fa-play"></i></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <hr class="line m-0" />
-                                    <div id="editor"></div>
-                                </div>
-                                <div id="saveCod" class="tab-pane fade">
-                                    <ul class="UlFormat whiteTheme">
-                                        @if (false)
-                                        {
-                                            <li><span class="liMsg">Você não tem códigos salvos.</span></li>
-                                        }
-                                        else
-                                        {
-                                            for (int i = 0; i < 3; i++)
-                                            {
-                                                <li role="button"><a class="liText">MeuCodigo @(i + 1)</a></li>
-                                            }
-                                        }
-                                    </ul>
-                                </div>
-                                <div id="recs" class="tab-pane fade">
-                                    <ul class="UlFormat whiteTheme">
-                                        @if (true)
-                                        {
-                                            <li><span class="liMsg">Você não tem videos salvos.</span></li>
-                                        }
-                                        else
-                                        {
-                                            for (int i = 0; i < 3; i++)
-                                            {
-                                                <li role="button"><a class="liText">MeuVideo @(i + 1)</a></li>
-                                            }
-                                        }
-                                    </ul>
-                                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="active tab_button"><a data-toggle="tab" href="#editorControls">Edição</a></li>
+                        <li class="tab_button"><a data-toggle="tab" href="#saveCod">Códigos Salvos</a></li>
+                        <li class="tab_button"><a data-toggle="tab" href="#recs">Gravações</a></li>
+                    </ul>
+                    <div class="tab-content tab_content">
+                        <div id="editorControls" class="tab-pane fade in active">
+                            <div class="d-flex justify-content-end p-1">
+                                <a class="btn btn-primary mx-1">
+                                    <span><i class="fas fa-save"></i></span>
+                                </a>
+                                <a class="btn btn-primary mx-1">
+                                    <span><i class="fas fa-play"></i></span>
+                                </a>
                             </div>
+                            <hr class="line m-0" />
+                            <div id="editor"></div>
+                        </div>
+                        <div id="saveCod" class="tab-pane fade">
+                            <ul class="whiteTheme">
+                                @if (false)
+                                {
+                                    <li><span class="tab_text">Você não tem códigos salvos.</span></li>
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        <li role="button"><a class="tab_text">MeuCodigo @(i + 1)</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div id="recs" class="tab-pane fade">
+                            <ul class="whiteTheme">
+                                @if (true)
+                                {
+                                    <li><span class="tab_text">Você não tem videos salvos.</span></li>
+                                }
+                                else
+                                {
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        <li role="button"><a class="tab_text">MeuVideo @(i + 1)</a></li>
+                                    }
+                                }
+                            </ul>
                         </div>
                     </div>
                 </div>
