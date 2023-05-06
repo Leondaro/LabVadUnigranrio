@@ -148,26 +148,31 @@ function Carrosel() {
     $("#Conteudo").carousel({ interval: false });
 
     //Olha para os botoes
-    $("#btn0").click(function () {
+    $("#nav-btn0").click(function () {
         $("#Conteudo").carousel(0);
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
     
-    $("#btn1").click(function () {
+    $("#nav-btn1").click(function () {
         $("#Conteudo").carousel(2);
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
 
-    $("#btn2").click(function () {
+    $("#nav-btn2").click(function () {
         $("#Conteudo").carousel(3);
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
 
-    $("#btn3").click(function () {
+    $("#nav-btn3").click(function () {
         $("#Conteudo").carousel(4);
+        $(".current").toggleClass("current");
+        $(this).toggleClass("current");
+    });
+
+    $("#nav-btn5").click(function () {
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
