@@ -71,63 +71,63 @@ $(document).ready(function () {
     //Seção do Tutorial: Sistema de Colapsos
     //Botões do Colapso de experimentos
     $("#expAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#expAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#expAngleUp").toggleClass("hidden");
     });
     $("#expAngleUp").click(function () {
         $("#expCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#expAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#expAngleDown").toggleClass("hidden");
     });
     //Botões da seção de Leds
     $("#ledAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#ledAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#ledAngleUp").toggleClass("hidden");
     });
     $("#ledAngleUp").click(function () {
         $("#ledCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#ledAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#ledAngleDown").toggleClass("hidden");
     });
     //Botões da seção de Servo Motor
     $("#servoAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#servoAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#servoAngleUp").toggleClass("hidden");
     });
     $("#servoAngleUp").click(function () {
         $("#servoCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#servoAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#servoAngleDown").toggleClass("hidden");
     });
     //Botões da seção de Motor DC
     $("#dcAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#dcAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#dcAngleUp").toggleClass("hidden");
     });
     $("#dcAngleUp").click(function () {
         $("#dcCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#dcAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#dcAngleDown").toggleClass("hidden");
     });
     //Botões da seção de Display de Caracteres
     $("#disAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#disAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#disAngleUp").toggleClass("hidden");
     });
     $("#disAngleUp").click(function () {
         $("#disCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#disAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#disAngleDown").toggleClass("hidden");
     });
     //Botões da seção de Display de 8 Segmentos
     $("#segAngleDown").click(function () {
-        $(this).toggleClass("is-hidden");
-        $("#segAngleUp").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#segAngleUp").toggleClass("hidden");
     });
     $("#segAngleUp").click(function () {
         $("#segCollapse").collapse('hide');
-        $(this).toggleClass("is-hidden");
-        $("#segAngleDown").toggleClass("is-hidden");
+        $(this).toggleClass("hidden");
+        $("#segAngleDown").toggleClass("hidden");
     });
 });
 
