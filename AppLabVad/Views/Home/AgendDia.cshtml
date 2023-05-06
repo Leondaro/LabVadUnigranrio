@@ -6,47 +6,47 @@
                 <div class="tile is-child">
                     <div id="reserva">
                         <form id="myReserve">
-                            <div class="columns">
-                                <div class="column is-one-fifth">
-                                    <a id="btnRetorno" class="button is-info is-medium">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-arrow-left"></i>
-                                        </span>
-                                        <span>Voltar</span>
-                                    </a>
+                            <div class="scheduling_day">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="btn-info p-2 rounded">
+                                        <a id="btnRetorno" class="button is-info is-medium">
+                                            <span class="">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </span>
+                                            <span>Voltar</span>
+                                        </a>
+                                    </div>
+                                    <h3 class="m-0">
+                                        <span class="label label-warning">Sua Reserva</span>
+                                    </h3>
                                 </div>
-                                <div class="column is-one-fifth is-offset-one-quarter">
-                                    <span class="button title is-large is-4 is-static is-rounded">Sua Reserva</span>
-                                </div>
-                            </div>
-                            <div class="columns is-variable is-8">
-                                <div class="column is-one-fifth is-offset-one-fifth">
-                                    <div class="columns field has-addons">
-                                        <p class="control"><a class="button is-static is-large">Hora:</a></p>
-                                        <p class="control"><input id="hora" class="input is-large" name="horario" type="text" value="Hora escolhida" readonly /></p>
+                                <div class="row d-flex">
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Hora:</span>
+                                            <input id="hora" class="form-control" name="horario" type="text" value="Hora escolhida" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Dia:</span>
+                                            <input id="dia" class="form-control" name="data" type="text" value="Dia escolhido" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Duração:</span>
+                                            <select id="tempo" class="form-control" name="duracao" form="myReserve" required>
+                                                <option value="1">30 mins</option>
+                                                <option value="2">1 hora </option>
+                                                <option value="3">1 hora e 30 mins</option>
+                                                <option value="4">2 horas</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="column is-one-fifth">
-                                    <div class="columns field has-addons">
-                                        <p class="control"><a class="button is-static is-large">Dia:</a></p>
-                                        <p class="control"><input id="dia" class="input is-large" name="data" type="text" value="Dia escolhido" readonly /></p>
-                                    </div>
-                                </div>
-                                <div class="column is-one-fifth">
-                                    <div class="columns field has-addons">
-                                        <p class="control"><a class="button is-static is-large">Duração:</a></p>
-                                        <select id="tempo" class="select is-large" name="duracao" form="myReserve" required>
-                                            <option value="1">30 mins</option>
-                                            <option value="2">1 hora </option>
-                                            <option value="3">1 hora e 30 mins</option>
-                                            <option value="4">2 horas</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="columns">
-                                <div class="column is-one-fifth is-offset-10">
-                                    <p class="control"><input id="btnEnviar" class="button is-link is-large" type="submit" value="Confirmar Reserva" disabled /></p>
+                                <div class="row d-flex justify-content-end">
+                                    <input id="btnEnviar" class="btn-success p-2 rounded" type="submit" value="Reservar" disabled />
                                 </div>
                             </div>
                         </form>
