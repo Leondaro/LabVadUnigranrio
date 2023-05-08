@@ -41,19 +41,8 @@ a.tab_text:hover {
     list-style: none;
 }
 
-
-
-
-
 video {
-    box-shadow: 0px 0px 5px 1px black;
-}
-
-.WrapperVideo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+    border-radius: 1rem;
 }
 
 hr#video {

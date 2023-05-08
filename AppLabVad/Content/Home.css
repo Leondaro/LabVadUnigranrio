@@ -1,9 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .navbar_custom {
-    display: flex;
+    display: block;
+    min-width: fit-content;
     background-color: #4682b4;
 }
+.toggle_custom {
+    border: 1px solid #f0ad4e !important;
+}
+.fit_width {
+    width: fit-content;
+}
+.button_burguer_icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #f0ad4e;
+    margin: 6px 0;
+}
+/*
 .navbar_brand {
     float: left
 }
@@ -12,6 +27,7 @@
     display: flex;
     justify-content: right;
 }
+*/
 .navitem_custom {
     background-color: #4682b4;
     border: 3px solid #363636;
@@ -100,32 +116,26 @@ input:checked + .slider_button:before {/* Faz o deslizamento do botão */
     transform: translateX(22px);
 }
 
-.h_line {
-    border: 1px solid gray;
-}
-.v_line {
+.line_flex {
     border-left: 2px solid gray;
 }
-
-
-
-body#Home {
-    background-color: #FAF0E6;
-    padding-bottom: 0px;
-    -webkit-transition: background-color, 0.2s;
-    transition: background-color, 0.8s;
-}
-
-div#container {
-    width: auto;
-    height: auto;
-    min-height: 100vh;
-}
-
 
 img#logo {
     height: 85%;
 }
+/*
+div#Conteudo {
+    width: 100%;
+    height: auto;
+    min-height: inherit;
+    display: flex;
+}*/
+
+
+
+
+
+
 
 .whiteTheme {
     background-color: #FAF0E6;
@@ -145,23 +155,13 @@ div#modoNoturno {
 
 
 
-
-div#Conteudo {
-    width: 100%;
-    height: auto;
-    min-height: inherit;
-    display: flex;
-}
-
 .fc-center {
     margin-left: 20px;
     margin-right: 20px;
 }
-
 .item .active {
     display: flex;
 }
-
 .Interface {
     height: auto;
     min-height: inherit;
@@ -169,13 +169,47 @@ div#Conteudo {
     margin-left: 10%;
     margin-right: 10%;
 }
-
 .carousel-inner {
     height: auto;
     min-height: inherit;
 }
-
 .item {
     height: auto;
     min-height: inherit;
+}
+
+
+
+@media screen and (max-width: 412px) {
+    ul.nav.nav-tabs {
+        flex-direction: column;
+    }
+
+    li.tab_button > a {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .row_responsive._smaller {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .row_responsive._small {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .line_flex {
+        border-top: 2px solid gray;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1216px) {
+    .row_responsive._medium {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }

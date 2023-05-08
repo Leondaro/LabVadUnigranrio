@@ -8,23 +8,8 @@
     margin-top: 50px;
 }
 
-#reserva {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-/*
-.formReserve {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-*/
-
-.columns {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#formReserva {
+    width: fit-content;
 }
 
 .button:hover {

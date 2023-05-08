@@ -3,239 +3,44 @@
 body {
     background-image: url('_imagens/img2fundo.jpg');
 }
-
-.section {
-    min-height: 100vh;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+figure {
+    background-color: rgba(100,100,100, 0.9);
+    border-radius: 0.5rem;
+}
+.input-group > label {
+    width: 35%;
+    margin: 0;
 }
 
-.LoginBox {
+.label_custom {
+    width: fit-content;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+}
+
+.login_panel {
     background-color: rgba(7, 0, 0,0.8);
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 20px;
-    padding-bottom: 50px;
+    padding: 5rem;
     border-left: 2px solid yellow;
     font-family: 'Montserrat', sans-serif;
 }
 
-.Checkbox {
-    margin-left: 10px;
-}
-
-.field {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.RegisterBox {
+.register_panel {
     background-color: rgba(7, 0, 0,0.8);
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: .75rem 1rem 1.5rem 4rem;
     border-right: 2px solid yellow;
     font-family: 'Montserrat', sans-serif;
 }
 
-.RegisterBgd {
+form#cadastro {
     background-image: url('_imagens/img1fundo.jpg');
     background-size: cover;
     border-top: 1px solid yellow;
     border-bottom: 1px solid yellow;
 }
-
-#cadastro {
-    padding-top: 10px;
-    padding-bottom: 50px;
-}
-
-/*
-
- Definir preenchimento para impedir que o conteúdo atinja as bordas 
-.body-content {
-    
-}
-
-Define o tamano da fonte dependendo da tela
-@media screen and (min-width: 601px) {
-    h1 {
-        font-size: 30pt;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 20pt;
-    }
-}
-
-h1 {
-    
-}
-
-h2 {
-    color: white;
-    margin-left: 10px;
-}
-
-p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
-}
-
-.Interface {
-    
-}
-
-input {
-    color: black;
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 10pt;
-    width: 400px;
-    margin-bottom: 15px;
-}
-
-.LoginBox {
-    background-color: rgba(7, 0, 0,0.8);
-    display: flex;
-    flex-direction: column;
-    float: left;
-    clear: right;
-    min-width: 400px;
-    max-width: 70%;
-    height: 100%;
-    padding: 20px;
-    margin-bottom: 100px;
-    margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-containerLog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: flex-start;
-}
-
-form#login {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 80px;
-    margin-top: 30px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.containerBtn {
-    margin-left: 4px;
-}
-
-.Fields {
-    display: block;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-a:visited {
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: white;
-}
-
-.LoginBtns {
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    font-weight: bold;
-    max-width: 15%;
-    margin-bottom: 15px;
-}
-
-.Generic1 {
-    display: inline-flex;
-    clear:both;
-}
-
-.Generic2 {
-    margin-left: 5px;
-}
-
-.Generic3 {
-    display: block;
-    width: 600px;
-}
-
-.Generic4 {
-    display: flex;
-    float: right;
-    margin-right: 30px;
-}
-
-#LembrarMe {
-    max-width: 5%;
-}
-
-#vaiCadastro {
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.RegisterBox {
-    float: right;
-    background-color: rgba(7, 0, 0,0.8);
-    width: 800px;
-    padding: 20px;
-    margin-bottom: 50px;
-    margin-top: 200px;
-    border-right: 2px solid yellow;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.RegisterBgd {
-    background-image: url('_imagens/img1fundo.jpg');
-    border-top: 1px solid yellow;
-    border-bottom: 1px solid yellow;
-}
-
-form#cadastro {
-    padding: 20px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-}
-
-    form#cadastro > label {
-        margin-left: 10px;
-        margin-top: 15px;
-    }
-
-.Generic5 {
-    margin-left: 30px;
-}
-
-.BtnSubmit {
-    padding: 5px;
-    margin: 5px;
-    margin-top: 20px;
-}
-
-.Generic6 {
-    margin-top: 10px;
-}
-
-#vaiLogin {
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#btnClick {
-    margin-left: -10px;
-}
-*/

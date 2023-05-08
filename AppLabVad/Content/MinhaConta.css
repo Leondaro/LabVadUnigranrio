@@ -1,1 +1,7 @@
-﻿
+﻿.picture_frame {
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 1rem;
+}
+.h_line {
+    border: 1px solid gray;
+}

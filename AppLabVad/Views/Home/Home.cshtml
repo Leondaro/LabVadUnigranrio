@@ -4,7 +4,6 @@
 
 <head>
     <script src="~/Scripts/_JavaScript/jquery-3.4.1.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
     <meta charset="utf-8" />
     <title> @ViewBag.Title </title>
     <link rel="stylesheet" type="text/css" href="..\..\Scripts\_fullCalendar\core\main.css" />
@@ -33,45 +32,50 @@
     <div class="container-fluid px-0">
         <nav aria-label="main navigation">
             <div class="navbar rounded-0 navbar_custom">
-                <a role="button" class="navbar-toggle" aria-label="menu" aria-expanded="false" data-target="barraMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </a>
-                <div class="nav-item navbar_brand">
-                    <figure>
+                <div class="navbar-header">
+                    <figure class="float-left">
                         <img id="logo" src="~/Content/_imagens/logo.png" />
                     </figure>
+                    <a role="button" class="navbar-toggle collapsed toggle_custom float-right" aria-expanded="false"
+                       data-toggle="collapse" data-target="#barraMenu">
+                        <span class="button_burguer_icon"></span>
+                        <span class="button_burguer_icon"></span>
+                        <span class="button_burguer_icon"></span>
+                    </a>
                 </div>
-                <div class="navbar_body">
-                    <div id="barraMenu" class="nav-item row px-3">
-                        <div id="nav-btn0" class="nav-item navitem_custom current">
-                            <a class="nav-link navlink_custom" href="#">Agendamento</a>
-                        </div>
-                        <div id="nav-btn1" class="nav-item navitem_custom">
-                            <a class="nav-link navlink_custom" href="#">Experimento</a>
-                        </div>
-                        <div id="nav-btn2" class="nav-item navitem_custom">
-                            <a class="nav-link navlink_custom" href="#">Minha Conta</a>
-                        </div>
-                        <div id="nav-btn3" class="nav-item navitem_custom">
-                            <a class="nav-link navlink_custom" href="#">Ajuda</a>
-                        </div>
+                <div id="barraMenu" class="py-2 navbar-collapse collapse">
+                    <div class="nav navbar-right row_responsive _smaller">
+                        <div class="nav-item row row_responsive _smaller p-2">
+                            <div id="nav-btn0" class="nav-item navitem_custom current">
+                                <a class="nav-link navlink_custom" href="#">Agendamento</a>
+                            </div>
+                            <div id="nav-btn1" class="nav-item navitem_custom">
+                                <a class="nav-link navlink_custom" href="#">Experimento</a>
+                            </div>
+                            <div id="nav-btn2" class="nav-item navitem_custom">
+                                <a class="nav-link navlink_custom" href="#">Minha Conta</a>
+                            </div>
+                            <div id="nav-btn3" class="nav-item navitem_custom">
+                                <a class="nav-link navlink_custom" href="#">Ajuda</a>
+                            </div>
 
-                        <div id="nav-btn4" class="nav-item navitem_custom">
-                            <a class="nav-link navlink_custom" href="@Url.Action("Logoff", "Home")">Sair</a>
+                            <div id="nav-btn4" class="nav-item navitem_custom">
+                                <a class="nav-link navlink_custom" href="@Url.Action("Logoff", "Home")">Sair</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="nav-item px-3 d-flex flex-column justify-content-center">
-                        <span class="switch_label">Modo Noturno</span>
-                        <label class="switch_rail">
-                            <input id="btnNoturno" type="checkbox" />
-                            <span class="slider_button"></span>
-                        </label>
+                        <div class="nav-item px-3 d-flex flex-column justify-content-center fit_width">
+                            <span class="switch_label">Modo Noturno</span>
+                            <label class="switch_rail">
+                                <input id="btnNoturno" type="checkbox" />
+                                <span class="slider_button"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <div class="Interface">
+        <div class="Interface container">
             <div id="Conteudo" class="carousel slide">
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">

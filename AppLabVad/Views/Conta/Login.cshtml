@@ -6,155 +6,132 @@
 
 <head>
     <script src="~/Scripts/_JavaScript/jquery-3.4.1.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/_JavaScript/fLogin.js"></script>
     <link href="~/Content/Login.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="..\..\Content\bootstrap.min.css" />
     <link href='https://use.fontawesome.com/releases/v5.0.6/css/all.css' rel='stylesheet'>
 </head>
-
 
 <section class="section">
     <div class="container">
         <div id="loginCarrosel" class="carousel slide">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <div class="column is-half">
-                        <div class="LoginBox">
-                            <div class="column">
-                                <div class="level">
-                                    <figure class="image Logo">
+                    <div class="col py-5">
+                        <div class="login_panel">
+                            <div class="col">
+                                <div class="row">
+                                    <figure class="p-3">
                                         <img src="~/Content/_imagens/logo.png" />
                                     </figure>
                                 </div>
-                                <div class="level">
-                                    <h1 class="title is-3 has-text-white is-size-4-touch">
-                                        LabVad: Laboratório Virtual de Atividades Didáticas em Ciências e Robótica
-                                    </h1>
+                                <div class="row">
+                                    <div>
+                                        <h1 class="text-white">
+                                            LabVad: Laboratório Virtual de Atividades Didáticas em Ciências e Robótica
+                                        </h1>
+                                    </div>
                                 </div>
-                                <div class="level">
+                                <div class="row p-5">
                                     <section>
                                         @using (Html.BeginForm("Login", "Conta", new { ReturnUrl = ViewBag.ReturnUrl },
-                                                FormMethod.Post, new { @class = "column", id = "login", role = "form" }))
+                                                FormMethod.Post, new { @class = "col", id = "login", role = "form" }))
                                         {
                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                            <div class="field">
-                                                <div class="level columns is-gapless">
-                                                    <div class="column is-4">
-                                                        <p> @Html.LabelFor(log => log.ModelLogin.EmailLog, new { @class = "label is-medium has-text-white" }) </p>
-                                                    </div>
-                                                    <div class="column">
-                                                        <div class="control">
-                                                            @Html.TextBoxFor(log => log.ModelLogin.EmailLog, new { @class = "input", @readonly="readonly" })
-                                                            @Html.ValidationMessageFor(log => log.ModelLogin.EmailLog, "", new { @class = "text-danger" })
-                                                        </div>
+                                            <div class="row">
+                                                <div class="input-group">
+                                                    @Html.LabelFor(log => log.ModelLogin.EmailLog, new { @class = "input-group-addon label-lg" })
+                                                    @Html.TextBoxFor(log => log.ModelLogin.EmailLog, new { @class = "form-control", @readonly = "readonly" })
+                                                </div>
+                                                @Html.ValidationMessageFor(log => log.ModelLogin.EmailLog, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-group">
+                                                    @Html.LabelFor(log => log.ModelLogin.SenhaLog, new { @class = "input-group-addon label-lg" })
+                                                    @Html.TextBoxFor(log => log.ModelLogin.SenhaLog, new { @class = "form-control", @readonly = "readonly", @type = "password" })
+                                                </div>
+                                                @Html.ValidationMessageFor(log => log.ModelLogin.SenhaLog, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="row">
+                                                <div class="d-flex btn-group">
+                                                    @Html.LabelFor(log => log.ModelLogin.LembrarMe, new { @class = "text-white m-0" })
+                                                    <div class="d-flex ml-2">
+                                                        @Html.CheckBoxFor(log => log.ModelLogin.LembrarMe, new { @class = "m-0" })
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="field">
-                                                <div class="level columns is-gapless">
-                                                    <div class="column is-4">
-                                                        <p> @Html.LabelFor(log => log.ModelLogin.SenhaLog, new { @class = "label is-medium has-text-white" }) </p>
-                                                    </div>
-                                                    <div class="column">
-                                                        <div class="control">
-                                                            @Html.TextBoxFor(log => log.ModelLogin.SenhaLog, new { @class = "input", @readonly = "readonly", @type = "password" })
-                                                            @Html.ValidationMessageFor(log => log.ModelLogin.SenhaLog, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
+                                            <div class="d-block">
+                                                <div class="float-left">
+                                                    <input class="btn btn-info" type="submit" value="Entrar" />
                                                 </div>
-                                            </div>
-                                            <div class="field">
-                                                <div class="columns">
-                                                    <div class="column is-narrow">
-                                                        <div class="button is-light is-outlined">
-                                                            <p> @Html.LabelFor(log => log.ModelLogin.LembrarMe, new { @class = "is-marginless" })</p>
-                                                            <div class="Checkbox">
-                                                                @Html.CheckBoxFor(log => log.ModelLogin.LembrarMe)
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="column">
-                                                        <div class="is-pulled-right">
-                                                            <input class="button is-link" type="submit" value="Entrar" />
-                                                        </div>
-                                                    </div>
+                                                <div class="float-right">
+                                                    <button id="changeToRegister" class="btn btn-warning" type="button">Cadastrar</button>
                                                 </div>
                                             </div>
                                         }
                                     </section>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="field">
-                                    <div class="is-pulled-right">
-                                        <div id="changeToRegister" class="button is-warning">Cadastrar</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <div class="column is-half is-offset-6">
-                        <div class="RegisterBox">
-                            <div class="column">
-                                <div class="level">
-                                    <h2 class="title is-3 has-text-white is-size-4-touch"> Realizar Cadastro </h2>
+                    <div class="float-right col-10 py-5 px-0">
+                        <div class="register_panel">
+                            <div class="col">
+                                <div class="row">
+                                    <h2 class="text-white"> Realizar Cadastro </h2>
                                 </div>
-                                <div class="level">
-                                    <div class="column">
+                                <div class="row">
+                                    <div class="col">
                                         @using (Html.BeginForm("Cadastrar", "Cadastro", new { ReturnUrl = ViewBag.ReturnUrl },
-                                                                    FormMethod.Post, new { @class = "column RegisterBgd", id = "cadastro", role = "form" }))
+                                                                    FormMethod.Post, new { @class = "col py-4", id = "cadastro", role = "form" }))
                                         {
                                             <input id="form" type="hidden" value="cadastro" />
                                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <div class="field">
-                                                <p> @Html.LabelFor(cad => cad.ModelRegister.NomeCad, new { @class = "is-medium has-text-white" }) </p>
-                                                <div class="control">
-                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.NomeCad, "", new { @class = "text-danger" })
-                                                    @Html.TextBoxFor(cad => cad.ModelRegister.NomeCad, new { @class = "input", id = "nomeCad" })
-                                                </div>
+                                            <div class="input-group d-flex flex-column py-1">
+                                                @Html.ValidationMessageFor(cad => cad.ModelRegister.NomeCad, "", new { @class = "text-danger" })
+                                                
+                                                @Html.LabelFor(cad => cad.ModelRegister.NomeCad, new { @class = "label-lg label_custom text-white" })
+                                                @Html.TextBoxFor(cad => cad.ModelRegister.NomeCad, new { @class = "form-control", id = "nomeCad" })
                                             </div>
-                                            <div class="field">
-                                                <p> @Html.LabelFor(cad => cad.ModelRegister.EmailCad, new { @class = "is-medium has-text-white" }) </p>
-                                                <div class="control">
-                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.EmailCad, "", new { @class = "text-danger" })
-                                                    @Html.TextBoxFor(cad => cad.ModelRegister.EmailCad, new { @class = "input", id = "emailCad" })
-                                                </div>
+                                            <div class="input-group d-flex flex-column py-1">
+                                                @Html.ValidationMessageFor(cad => cad.ModelRegister.EmailCad, "", new { @class = "text-danger" })
+
+                                                @Html.LabelFor(cad => cad.ModelRegister.EmailCad, new { @class = "label-lg label_custom text-white" })
+                                                @Html.TextBoxFor(cad => cad.ModelRegister.EmailCad, new { @class = "form-control", id = "emailCad" })
                                             </div>
-                                            <div class="field">
-                                                <p> @Html.LabelFor(cad => cad.ModelRegister.InstiCad, new { @class = "is-medium has-text-white" }) </p>
-                                                <div class="control">
-                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.InstiCad, "", new { @class = "text-danger" })
-                                                    @Html.TextBoxFor(cad => cad.ModelRegister.InstiCad, new { @class = "input", id = "instiCad" })
-                                                </div>
+                                            <div class="input-group d-flex flex-column py-1">
+                                                @Html.ValidationMessageFor(cad => cad.ModelRegister.InstiCad, "", new { @class = "text-danger" })
+
+                                                @Html.LabelFor(cad => cad.ModelRegister.InstiCad, new { @class = "label-lg label_custom text-white" })
+                                                @Html.TextBoxFor(cad => cad.ModelRegister.InstiCad, new { @class = "form-control", id = "instiCad" })
                                             </div>
-                                            <div class="field">
-                                                <p> @Html.LabelFor(cad => cad.ModelRegister.SenhaCad, new { @class = "is-medium has-text-white" }) </p>
-                                                <div class="control">
-                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.SenhaCad, "", new { @class = "text-danger" })
-                                                    @Html.PasswordFor(cad => cad.ModelRegister.SenhaCad, new { @class = "input", id = "senhaCad" })
-                                                </div>
+                                            <div class="input-group d-flex flex-column py-1">
+                                                @Html.ValidationMessageFor(cad => cad.ModelRegister.SenhaCad, "", new { @class = "text-danger" })
+
+                                                @Html.LabelFor(cad => cad.ModelRegister.SenhaCad, new { @class = "label-lg label_custom text-white" })
+                                                @Html.PasswordFor(cad => cad.ModelRegister.SenhaCad, new { @class = "form-control", id = "senhaCad" })
                                             </div>
-                                            <div class="field">
-                                                <p> @Html.LabelFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "is-medium has-text-white" }) </p>
-                                                <div class="control">
-                                                    @Html.ValidationMessageFor(cad => cad.ModelRegister.ConfSenCad, "", new { @class = "text-danger" })
-                                                    @Html.PasswordFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "input", id = "confSenCad" })
-                                                </div>
+                                            <div class="input-group d-flex flex-column py-1">
+                                                @Html.ValidationMessageFor(cad => cad.ModelRegister.ConfSenCad, "", new { @class = "text-danger" })
+
+                                                @Html.LabelFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "label-lg label_custom text-white" })
+                                                @Html.PasswordFor(cad => cad.ModelRegister.ConfSenCad, new { @class = "form-control", id = "confSenCad" })
                                             </div>
-                                            <div class="field">
-                                                <div class="is-pulled-left">
-                                                    <input class="button is-link" type="submit" value="Enviar" />
+                                            <div class="col-4 d-block">
+                                                <div class="float-right">
+                                                    <input class="btn btn-info" type="submit" value="Enviar" />
                                                 </div>
                                             </div>
                                         }
-                                        <div class="column">
-                                            <div class="field">
-                                                <div class="is-pulled-right">
-                                                    <div id="changeToLogin" class="button is-warning">
-                                                        <span class="icon is-small is-left"><i class="fas fa-arrow-left"></i></span>
+                                        <div class="col py-4">
+                                            <div class="d-block">
+                                                <div class="float-left">
+                                                    <div id="changeToLogin" class="btn btn-warning">
+                                                        <span><i class="fas fa-arrow-left"></i></span>
                                                         <span>Login</span>
                                                     </div>
                                                 </div>

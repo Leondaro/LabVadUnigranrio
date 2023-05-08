@@ -1,12 +1,12 @@
 ﻿<link href="~/Content/Agendamento.css" rel="stylesheet" />
-<div class="container">
-    <div id="reserva">
-        <form id="myReserve">
+<div class="container-fluid">
+    <div id="reserva" class="d-flex justify-content-center py-5">
+        <form id="formReserva">
             <div class="scheduling_day">
-                <div class="row d-flex justify-content-between align-items-center">
+                <div class="row justify-content-between align-items-center">
                     <div class="btn-info p-2 rounded">
-                        <a id="btnRetorno" class="button is-info is-medium">
-                            <span class="">
+                        <a id="btnRetorno">
+                            <span>
                                 <i class="fas fa-arrow-left"></i>
                             </span>
                             <span>Voltar</span>
@@ -16,7 +16,7 @@
                         <span class="label label-warning">Sua Reserva</span>
                     </h3>
                 </div>
-                <div class="row d-flex">
+                <div class="row row_responsive _small">
                     <div class="col d-flex justify-content-center">
                         <div class="input-group">
                             <span class="input-group-addon">Hora:</span>
@@ -32,7 +32,7 @@
                     <div class="col d-flex justify-content-center">
                         <div class="input-group">
                             <span class="input-group-addon">Duração:</span>
-                            <select id="tempo" class="form-control" name="duracao" form="myReserve" required>
+                            <select id="tempo" class="form-control" name="duracao" form="formReserva" required>
                                 <option value="1">30 mins</option>
                                 <option value="2">1 hora </option>
                                 <option value="3">1 hora e 30 mins</option>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-end">
+                <div class="row justify-content-end">
                     <input id="btnEnviar" class="btn-success p-2 rounded" type="submit" value="Reservar" disabled />
                 </div>
             </div>
