@@ -1,4 +1,13 @@
-//import { Calendar } from "../_fullCalendar/core/main";
+$(document).ready(function () {
+    initCarousel();
+    initEditor();
+    collapseButtonEvents();
+
+    $("#btnNoturno").click(function () {
+        changeColorScheme();
+    });
+});
+
 
 function changeColorScheme() {
     let elements = $('#btnNoturno')[0].checked ? $('.whiteTheme').toArray() : $('.darkTheme').toArray();
@@ -57,81 +66,21 @@ function changeColorScheme() {
     });
 }
 
-//Inicialização de funções e eventos.
-$(document).ready(function () {
-    //Inicializa o carrossel de conteúdo.
-    Carrosel();
-    //Inicializa o editor de código.
-    initEditor();
+function collapseButtonEvents() {
+    $(".angle_down").click(function () {
+        const target = $(this).attr("data-target")
 
-    $("#btnNoturno").click(function () {
-        changeColorScheme();
-    });
-        
-    //Seção do Tutorial: Sistema de Colapsos
-    //Botões do Colapso de experimentos
-    $("#expAngleDown").click(function () {
         $(this).toggleClass("hidden");
-        $("#expAngleUp").toggleClass("hidden");
+        $(".angle_up[data-target='" + target + "']").toggleClass("hidden");
     });
-    $("#expAngleUp").click(function () {
-        $("#expCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#expAngleDown").toggleClass("hidden");
-    });
-    //Botões da seção de Leds
-    $("#ledAngleDown").click(function () {
-        $(this).toggleClass("hidden");
-        $("#ledAngleUp").toggleClass("hidden");
-    });
-    $("#ledAngleUp").click(function () {
-        $("#ledCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#ledAngleDown").toggleClass("hidden");
-    });
-    //Botões da seção de Servo Motor
-    $("#servoAngleDown").click(function () {
-        $(this).toggleClass("hidden");
-        $("#servoAngleUp").toggleClass("hidden");
-    });
-    $("#servoAngleUp").click(function () {
-        $("#servoCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#servoAngleDown").toggleClass("hidden");
-    });
-    //Botões da seção de Motor DC
-    $("#dcAngleDown").click(function () {
-        $(this).toggleClass("hidden");
-        $("#dcAngleUp").toggleClass("hidden");
-    });
-    $("#dcAngleUp").click(function () {
-        $("#dcCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#dcAngleDown").toggleClass("hidden");
-    });
-    //Botões da seção de Display de Caracteres
-    $("#disAngleDown").click(function () {
-        $(this).toggleClass("hidden");
-        $("#disAngleUp").toggleClass("hidden");
-    });
-    $("#disAngleUp").click(function () {
-        $("#disCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#disAngleDown").toggleClass("hidden");
-    });
-    //Botões da seção de Display de 8 Segmentos
-    $("#segAngleDown").click(function () {
-        $(this).toggleClass("hidden");
-        $("#segAngleUp").toggleClass("hidden");
-    });
-    $("#segAngleUp").click(function () {
-        $("#segCollapse").collapse('hide');
-        $(this).toggleClass("hidden");
-        $("#segAngleDown").toggleClass("hidden");
-    });
-});
+    $(".angle_up").click(function () {
+        const target = $(this).attr("data-target")
 
-//Editor de Código
+        $(this).toggleClass("hidden");
+        $(".angle_down[data-target='" + target + "']").toggleClass("hidden");
+    });
+}
+
 function initEditor() {
     if ($('#editor').length === 0) return;
 
@@ -142,18 +91,18 @@ function initEditor() {
     //editor.session.setMode("ace/mode/javascript");
     aceBackground.addClass('whiteTheme');
 }
-//Carrossel
-function Carrosel() {
-    //Inicia o carrosel
+function initCarousel() {
     $("#Conteudo").carousel({ interval: false });
-
-    //Olha para os botoes
+    carouselEvents();
+    calendario('bootstrap');
+}
+function carouselEvents() {
     $("#nav-btn0").click(function () {
         $("#Conteudo").carousel(0);
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
-    
+
     $("#nav-btn1").click(function () {
         $("#Conteudo").carousel(2);
         $(".current").toggleClass("current");
@@ -176,6 +125,4 @@ function Carrosel() {
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
     });
-
-    calendario('bootstrap');
 }

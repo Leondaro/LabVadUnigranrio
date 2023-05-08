@@ -131,6 +131,10 @@ input:checked + .slider_button:before {/* Faz o deslizamento do botão */
 img#logo {
     height: 85%;
 }
+
+span > i {
+    pointer-events: none;
+}
 /*
 div#Conteudo {
     width: 100%;
