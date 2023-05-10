@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-
 body {
     background-color: #FAF0E6 !important;
 }
@@ -132,15 +131,6 @@ input:checked + .slider_button:before {
     -ms-transform: translateY(22px);
     transform: translateX(22px);
 }
-/*
-div#modoNoturno {
-    display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    flex-direction: column;
-    align-content: center;
-}
-*/
 
 .line_flex {
     border-left: 2px solid gray;
@@ -153,11 +143,10 @@ img#logo {
 span > i {
     pointer-events: none;
 }
-
+/**/
 div#Conteudo {
     width: 100%;
-    height: auto;
-    min-height: inherit;
+    min-height: 100vh;
     display: flex;
 }
 

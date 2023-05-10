@@ -16,6 +16,11 @@
     text-decoration: none;
 }
 
+.fc-time-grid-container {
+    height: 50vh !important;
+    overflow: hidden auto !important;
+}
+
 td.fc-today {
     background-color: inherit !important;
 }
