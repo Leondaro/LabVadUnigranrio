@@ -1,4 +1,11 @@
-﻿.picture_frame {
+﻿.well._dark_theme {
+    background-image: linear-gradient(to bottom, #282923 0%, #444 100%) !important;
+    border-color: #444;
+}
+.fc-list-empty {
+    color: #d9534f;
+}
+.picture_frame {
     box-shadow: 1px 1px 3px gray;
     border-radius: 1rem;
 }

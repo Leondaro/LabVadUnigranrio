@@ -2,68 +2,37 @@ $(document).ready(function () {
     initCarousel();
     initEditor();
     collapseButtonEvents();
+    switchThemeButtonEvent()
+});
 
+function switchThemeButtonEvent() {
     $("#btnNoturno").click(function () {
         changeColorScheme();
     });
-});
-
-
+}
 function changeColorScheme() {
-    let elements = $('#btnNoturno')[0].checked ? $('.whiteTheme').toArray() : $('.darkTheme').toArray();
-    let tiles = $('.bgColorSwitch').toArray();
-    let labels = $('label').toArray();
-    let h3El = $('h3').toArray();
+    $('body').toggleClass('_dark_theme');
+    $('.ace_content').toggleClass("_dark_theme");
+    $('.well').not('.help_banner').toggleClass("_dark_theme");
+    $('.panel').toggleClass("_dark_theme");
 
-    let calendar = $('#calendar');
-    let timeGrid = $('#calendarTimeGrid');
-    let viewList = $('#wrappedView');
-    let thCal = calendar.find(".fc-head");
-    //let thGrid = timeGrid.find(".fc-head");
-    let panelTexts = $('.liText, .liMsg').toArray();
+    $('h1').toggleClass('text-light');
+    $('h2').not('.well-sm').toggleClass('text-light');
+    $('h3').not('.help_banner > h3').toggleClass('text-light');
+    $('label').toggleClass('text-light');
+    $('.tab_text').toggleClass('text-light');
+    $('#calendar').toggleClass("text-light");
+    $('#calendarTimeGrid').toggleClass("text-light");
 
     if ($('#editor').length) {
-        let aceEditor = ace.edit('editor');
-        let aceBackground = $('.ace_content');
-        //Editor
+        const aceEditor = ace.edit('editor');
+
         if ($('#btnNoturno')[0].checked) {
             aceEditor.setTheme("ace/theme/monokai");
-            aceBackground.addClass('whiteTheme');
-            aceBackground.removeClass('darkTheme');
         } else {
             aceEditor.setTheme("ace/theme/eclipse");
-            aceBackground.removeClass('whiteTheme');
-            aceBackground.addClass('darkTheme');
         }
     }
-
-    //Generic
-    elements.forEach(element => {
-        element.classList.toggle('whiteTheme');
-        element.classList.toggle('darkTheme');
-    })
-    h3El.forEach(h3 => {
-        h3.classList.toggle('has-text-light');
-    });
-    //FullCalendar
-    calendar.toggleClass("has-text-light");
-    timeGrid.toggleClass("has-text-light");
-    viewList.toggleClass("has-background-grey-lighter");
-    viewList.toggleClass("has-background-grey-light");
-    thCal.toggleClass("has-background-light");
-    //thGrid.toggleClass("has-background-light");
-    //CodePanel
-    panelTexts.forEach(text => {
-        text.classList.toggle('has-text-light');
-    });
-    //My Account View
-    tiles.forEach(tile => {
-        tile.classList.toggle("has-background-light");
-        tile.classList.toggle("has-background-grey-darker");
-    });
-    labels.forEach(label => {
-        label.classList.toggle('has-text-light');
-    });
 }
 
 function collapseButtonEvents() {
@@ -84,12 +53,8 @@ function collapseButtonEvents() {
 function initEditor() {
     if ($('#editor').length === 0) return;
 
-    let editor = ace.edit("editor");
-    let aceBackground = $('.ace_content');
-    
+    const editor = ace.edit("editor");   
     editor.setTheme("ace/theme/eclipse");
-    //editor.session.setMode("ace/mode/javascript");
-    aceBackground.addClass('whiteTheme');
 }
 function initCarousel() {
     $("#Conteudo").carousel({ interval: false });
