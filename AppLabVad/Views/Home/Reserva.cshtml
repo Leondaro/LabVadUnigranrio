@@ -1,0 +1,51 @@
+﻿<link href="~/Content/Agendamento.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div id="reserva" class="d-flex justify-content-center py-5">
+        <form id="formReserva">
+            <div class="scheduling_day">
+                <div class="row justify-content-between align-items-center">
+                    <div>
+                        <a id="btnRetorno" class="btn btn-info p-2 rounded">
+                            <span>
+                                <i class="fas fa-arrow-left"></i>
+                            </span>
+                            <span>Voltar</span>
+                        </a>
+                    </div>
+                    <h3 class="m-0">
+                        <span class="label label-warning">Sua Reserva</span>
+                    </h3>
+                </div>
+                <div class="row row_responsive _small">
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Hora:</span>
+                            <input id="hora" class="form-control" name="horario" type="text" value="Hora escolhida" readonly />
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Dia:</span>
+                            <input id="dia" class="form-control" name="data" type="text" value="Dia escolhido" readonly />
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-addon">Duração:</span>
+                            <select id="tempo" class="form-control" name="duracao" form="formReserva" required>
+                                <option value="1">30 mins</option>
+                                <option value="2">1 hora </option>
+                                <option value="3">1 hora e 30 mins</option>
+                                <option value="4">2 horas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <button id="btnEnviar" class="btn btn-success p-2 rounded" type="submit" disabled>Reservar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="calendarTimeGrid"></div>
+</div>

@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    buildCalendar();
+    buildEventList();
+
     initCarousel();
     initEditor();
     collapseButtonEvents();
@@ -59,13 +62,16 @@ function initEditor() {
 function initCarousel() {
     $("#Conteudo").carousel({ interval: false });
     carouselEvents();
-    calendario('bootstrap');
 }
 function carouselEvents() {
     $("#nav-btn0").click(function () {
         $("#Conteudo").carousel(0);
         $(".current").toggleClass("current");
         $(this).toggleClass("current");
+    });
+
+    $("#btnRetorno").click(function () {
+        $("#Conteudo").carousel(0);
     });
 
     $("#nav-btn1").click(function () {

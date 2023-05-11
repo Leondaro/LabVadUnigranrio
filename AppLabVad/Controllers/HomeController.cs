@@ -32,7 +32,7 @@ namespace AppLabVad.Controllers
             return PartialView();
         }
 
-        public ActionResult AgendDia()
+        public ActionResult Reserva()
         {
             return PartialView();
         }
