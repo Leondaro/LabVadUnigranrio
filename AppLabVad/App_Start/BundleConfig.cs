@@ -27,8 +27,6 @@ namespace AppLabVad
                       "~/Content/bootstrapDarkly.min.css",
                       "~/Content/Site.css",
                       "~/Content/theme.css"
-                      //"~/Content/bulma.css",
-                      //"~/Content/bulma.min.css"
                       ));
         }
     }

@@ -10,7 +10,6 @@ body, ul, div {
     transition: background-color 1s;
 }
 
-/* Definir largura nos elementos de entrada do formulário, pois eles são 100% de largura por padrão */
 input,
 select,
 textarea {

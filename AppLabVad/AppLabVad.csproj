@@ -750,8 +750,10 @@
     <Content Include="Scripts\_fullCalendar\timegrid\main.js" />
     <Content Include="Scripts\_fullCalendar\timegrid\main.min.css" />
     <Content Include="Scripts\_fullCalendar\timegrid\main.min.js" />
-    <Content Include="Scripts\_JavaScript\fLogin.js" />
-    <Content Include="Scripts\_JavaScript\funcoes.js" />
+    <Content Include="Scripts\_JavaScript\agendamento.js" />
+    <Content Include="Scripts\_JavaScript\minhaConta.js" />
+    <Content Include="Scripts\_JavaScript\login.js" />
+    <Content Include="Scripts\_JavaScript\home.js" />
     <Content Include="Scripts\_JavaScript\jquery-3.4.1.js" />
     <Content Include="Scripts\_JavaScript\jquery.cycle.all.js" />
     <Content Include="Scripts\_JavaScript\jquery.cycle2.js" />
@@ -775,7 +777,7 @@
     <Content Include="Views\Home\Agendamento.cshtml" />
     <Content Include="Views\Home\Execucao.cshtml" />
     <Content Include="Views\Home\MinhaConta.cshtml" />
-    <Content Include="Views\Home\AgendDia.cshtml" />
+    <Content Include="Views\Home\Reserva.cshtml" />
     <Content Include="Views\Shared\Autenticacao.cshtml" />
     <Content Include="Views\Shared\Sessao.cshtml" />
   </ItemGroup>

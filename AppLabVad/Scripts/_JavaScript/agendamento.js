@@ -23,18 +23,9 @@
             $("#Conteudo").carousel(1);
             $("#calendar").css('pointer-events', 'none');
             calendarDayRender(info.dateStr);
-            /*
-            $(this).fullCalendar('changeView', 'timeGrid', 'info.dateStr');
-            function MudarView(dia) {
-                alert(dia);
-                $("#CalendarEl").fullCalendar('changeView', 'timeGrid');
-                $("#CalendarEl").fullCalendar('gotoDate', dia);
-            }
-            */
         }
     });
     calendar.render();
-    //calendar('bootstrap');
 }
 
 function calendarDayRender(dia) {
@@ -74,15 +65,14 @@ function calendarDayRender(dia) {
         },
         dateClick: function (info) {
             let previewEvent = calendarDay.getEventById('unsaved');
-            //Remove evento anterior, caso exista
+
             if (previewEvent != null)
                 previewEvent.remove();
 
-
             const today = new Date();
             const date = today.getDate();
-            let month = today.getMonth();
             const year = today.getFullYear();
+            let month = today.getMonth();
 
             const selectedDate = info.dateStr;
             const selectedDay = selectedDate.substring(8, 10);
@@ -94,7 +84,6 @@ function calendarDayRender(dia) {
             const selectedMin = time.substring(3, 5);
             let validOption = true;
 
-            //Verifica se a hora selecionada está de acordo com a hora disponível.
             if (year == selectedYear) {
                 if (++month == parseInt(selectedMonth, 10)) {
                     if (date == parseInt(selectedDay, 10)) {
@@ -113,7 +102,7 @@ function calendarDayRender(dia) {
                     }
                 }
             }
-            //Renderiza o evento após validado
+
             if (validOption) {
                 const start = selectedDate.substring(0, 19);
                 const end = selectedDate.substring(0, 11) + getDurationTime(selectedHour, selectedMin);
@@ -128,14 +117,11 @@ function calendarDayRender(dia) {
 
                 calendarDay.addEvent(newEvent);
 
-                //Envia a hora para confirmação
                 const inputTimeStart = document.getElementById("hora");
                 inputTimeStart.value = time + 'h';
 
-                //Envia a data para confirmação
                 const inputDay = document.getElementById("dia");
                 inputDay.value = selectedDay + '/' + selectedMonth + '/' + selectedYear;
-
             }
         }
     });
@@ -144,11 +130,11 @@ function calendarDayRender(dia) {
 }
 
 function formatDateStr(dateStr) {
-    let dia = dateStr.substring(8, 10);
-    let mes = dateStr.substring(5, 7);
-    let ano = dateStr.substring(0, 4);
+    let day = dateStr.substring(8, 10);
+    let month = dateStr.substring(5, 7);
+    let year = dateStr.substring(0, 4);
 
-    return dia + "/" + mes + "/" + ano;
+    return day + "/" + month + "/" + year;
 }
 
 function getTimeUnvailable() {
@@ -159,15 +145,14 @@ function getTimeUnvailable() {
     let year = date.getFullYear();
     let today = year + '-' + addZero(++month) + '-' + day;
 
-    //Verifica se há hora mínima de reserva indisponível 
     if ((hoursNow() == '00') && (parseInt(minutesNow()) < 30))
         return null;
-    //Arredonda os minutos 
+
     if (parseInt(minutesNow()) < 30)
         minutes = '00';
     else
         minutes = '30';
-    //Dados para criação de um evento de indisponibilidade
+
     const dataEvent = {
         id: 'indisponivel',
         title: "Horário obsoleto",

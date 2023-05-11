@@ -8,7 +8,7 @@ namespace AppLabVad.Dao
 {
     public class Conexao
     {
-        string stringConexao = @"Server=DEATHMACHINEV\SQLEXPRESS;Database=LabVad;User Id = admin; Password=admin;";
+        string stringConexao;
         protected SqlConnection conexao = null;
 
         //Método para abrir conexão com o Banco de Dados.
