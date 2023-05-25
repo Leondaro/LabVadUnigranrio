@@ -10,6 +10,14 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) 
 
+> ## Sobre o Projeto:
+>
+> O LabVad Unigranrio foi um projeto de conclusão de curso realizado em 2019, em colaboração com a universiade Unigranrio, e em parceria com o LabVad UFRJ. Sua proposta era de ser uma plataforma para aprendizado de programação voltada à robótica, através de experimentos práticos em Arduino. O aluno teria acesso remoto a diferentes experimentos do laboratório virtual. Poderia programar e ver seu código sendo executado em tempo real, em componentes Arduino alocados na Unigranrio.
+>
+> O projeto foi descontinuado antes de sua efetivação.
+>
+> [Clique aqui e veja o projeto.](https://applabvad.azurewebsites.net/)
+
 > ## Licença:
 > 
 > Todos os direitos reservados.
